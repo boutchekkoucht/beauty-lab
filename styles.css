@@ -1,0 +1,45 @@
+
+:root{--bg:#fafafa;--fg:#222;--muted:#666;--brand:#8a2be2;--card:#fff;--border:#eaeaea}
+*{box-sizing:border-box}html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Kufi Arabic","Amiri",sans-serif;color:var(--fg);background:var(--bg)}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+.container{max-width:1120px;margin:0 auto;padding:16px}
+.nav{position:sticky;top:0;background:var(--card);border-bottom:1px solid var(--border);z-index:10}
+.nav .container{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:10px 16px}
+.brand{display:flex;gap:10px;align-items:center;font-weight:800}
+.brand .logo{width:36px;height:36px;border-radius:10px;background:conic-gradient(from 45deg,var(--brand),#f6a,#ffda79)}
+.nav .links{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:var(--card)}
+.btn.primary{background:var(--brand);color:#fff;border-color:transparent}
+.hero{padding:48px 0;display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.grid{display:grid;gap:16px}.grid-3{grid-template-columns:repeat(3,1fr)}.grid-2{grid-template-columns:repeat(2,1fr)}
+footer{margin-top:40px;border-top:1px solid var(--border);background:var(--card)}
+footer .cols{display:grid;gap:16px;grid-template-columns:2fr 1fr 1fr}
+.badge{font-size:12px;color:var(--muted)}.meta{color:var(--muted);font-size:14px}
+.article-list .item{display:flex;gap:14px;align-items:flex-start}
+.thumb{width:120px;height:80px;border-radius:10px;background:#ddd;flex:none;object-fit:cover}
+input,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid var(--border);background:#fff}
+label{font-size:14px;color:var(--muted)}form .row{display:grid;gap:12px;margin:8px 0}
+.cookie{position:fixed;bottom:16px;right:16px;max-width:360px}
+
+/* Compact language button */
+.lang{position:relative}
+.lang-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--card);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.lang-btn span{font-size:18px;line-height:1}
+.lang-menu{position:absolute;top:42px;right:0;background:var(--card);border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.08);display:none;min-width:120px;overflow:hidden}
+.lang-menu.open{display:block}
+.lang-menu button{display:block;width:100%;text-align:left;padding:10px 12px;background:#fff;border:none;cursor:pointer}
+.lang-menu button:hover{background:#f3f3f3}
+
+/* RTL support */
+html[dir=rtl] body{font-family:"Noto Kufi Arabic","Amiri",Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+html[dir=rtl] .article-list .item{flex-direction:row-reverse}
+html[dir=rtl] .nav .container{flex-direction:row-reverse}
+html[dir=rtl] .nav .links{flex-direction:row-reverse}
+html[dir=rtl] .hero{direction:rtl}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .grid-3,.grid-2{grid-template-columns:1fr}
+  footer .cols{grid-template-columns:1fr}
+}
