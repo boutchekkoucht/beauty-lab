@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="fr">
+<html lang="fr"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,27 +16,34 @@
 </head>
 <body>
   <nav class="nav">
-    <div class="container">
-      <div class="brand"><div class="logo"></div> <span data-i18n="brand">BeautyLab • MakeUp</span></div>
-      <div class="links">
-        <a data-nav href="index.html" data-i18n="nav_home">Accueil</a>
-        <a data-nav href="cours.html" data-i18n="nav_courses">Cours</a>
-        <a data-nav href="a-propos.html" data-i18n="nav_about">À propos</a>
-        <a data-nav href="contact.html" data-i18n="nav_contact">Contact</a>
-        <a data-nav href="faq.html" data-i18n="nav_faq">FAQ</a>
-        <a class="btn" href="politique-confidentialite.html" data-i18n="nav_privacy">Confidentialité</a>
-        <a data-nav href="glossaire.html" data-i18n="nav_gloss">Glossaire</a>
-        <div class="lang">
-          <button id="langBtn" aria-label="Language" class="lang-btn"><span>🌐</span></button>
-          <div id="langMenu" class="lang-menu">
-            <button id="lang-fr">Français</button>
-            <button id="lang-en">English</button>
-            <button id="lang-ar">العربية</button>
-          </div>
+  <div class="container">
+    <div class="brand"><div class="logo"></div> <span data-i18n="brand">BeautyLab • MakeUp</span></div>
+
+    <!-- Bouton menu mobile -->
+    <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+
+    <!-- Ajoute l'id navLinks -->
+    <div class="links" id="navLinks">
+      <a data-nav href="index.html" data-i18n="nav_home">Accueil</a>
+      <a data-nav href="cours.html" data-i18n="nav_courses">Cours</a>
+      <a data-nav href="a-propos.html" data-i18n="nav_about">À propos</a>
+      <a data-nav href="contact.html" data-i18n="nav_contact">Contact</a>
+      <a data-nav href="faq.html" data-i18n="nav_faq">FAQ</a>
+      <a class="btn" href="politique-confidentialite.html" data-i18n="nav_privacy">Confidentialité</a>
+      <a data-nav href="glossaire.html" data-i18n="nav_gloss">Glossaire</a>
+
+      <div class="lang">
+        <button id="langBtn" aria-label="Language" class="lang-btn"><span>🌐</span></button>
+        <div id="langMenu" class="lang-menu">
+          <button id="lang-fr">Français</button>
+          <button id="lang-en">English</button>
+          <button id="lang-ar">العربية</button>
         </div>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
+
   <main class="container">
 
   <article class="card">

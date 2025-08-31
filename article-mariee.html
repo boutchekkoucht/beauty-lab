@@ -1,0 +1,303 @@
+
+<!doctype html>
+<html lang="fr">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="meta_title">Formation & Tutos MakeUp – BeautyLab</title>
+  <meta name="description" data-i18n-attr="content:meta_desc" content="Formations...">
+  <meta name="theme-color" content="#8a2be2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="i18n-data.js"></script>
+  <script defer src="i18n.js"></script>
+</head>
+<body>
+  <nav class="nav">
+  <div class="container">
+    <div class="brand"><div class="logo"></div> <span data-i18n="brand">BeautyLab • MakeUp</span></div>
+
+    <!-- Bouton menu mobile -->
+    <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+
+    <!-- Ajoute l'id navLinks -->
+    <div class="links" id="navLinks">
+      <a data-nav href="index.html" data-i18n="nav_home">Accueil</a>
+      <a data-nav href="cours.html" data-i18n="nav_courses">Cours</a>
+      <a data-nav href="a-propos.html" data-i18n="nav_about">À propos</a>
+      <a data-nav href="contact.html" data-i18n="nav_contact">Contact</a>
+      <a data-nav href="faq.html" data-i18n="nav_faq">FAQ</a>
+      <a class="btn" href="politique-confidentialite.html" data-i18n="nav_privacy">Confidentialité</a>
+      <a data-nav href="glossaire.html" data-i18n="nav_gloss">Glossaire</a>
+
+      <div class="lang">
+        <button id="langBtn" aria-label="Language" class="lang-btn"><span>🌐</span></button>
+        <div id="langMenu" class="lang-menu">
+          <button id="lang-fr">Français</button>
+          <button id="lang-en">English</button>
+          <button id="lang-ar">العربية</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+  <main class="container">
+      <h1 data-i18n="article_bridal_title"></h1>
+      <div data-i18n-html="article_bridal_body"></div>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="cols">
+        <div>
+          <h3 data-i18n="brand">BeautyLab • MakeUp</h3>
+          <p class="badge">© <span id="year"></span> BeautyLab.</p>
+        </div>
+        <div>
+          <h4>Links</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+            <li><a href="cours.html" data-i18n="nav_courses">Cours</a></li>
+            <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+            <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <p class="badge"><a href="politique-confidentialite.html" data-i18n="nav_privacy">Confidentialité</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div id="cookie" class="cookie card" style="display:none">
+    <strong>Cookies</strong>
+    <p>We use cookies to improve your experience.</p>
+    <button id="acceptCookies" class="btn primary">OK</button>
+  </div>
+</body>
+<script>
+    // i18n-augment-bridal.js — Article "Make-up mariées" (FR/EN/AR)
+    (function () {
+      window.I18N = window.I18N || {};
+      const add = (lang, obj)=> window.I18N[lang] = Object.assign(window.I18N[lang]||{}, obj);
+
+      // ================= FR =================
+      add('fr', {
+        "article_bridal_title": "Mariée — Tenue extrême, émotion & photo",
+        "article_bridal_body":
+          "<p>Le maquillage de mariée doit rester <strong>beau en vrai</strong>, <strong>solide toute la journée</strong> et <strong>propre en photo/vidéo</strong>. Ce guide condense la préparation, la pose en fines couches, les corrections couleur, l’anti-larmes et les retouches intelligentes.</p>" +
+
+          "<h2>1) Timeline & essai</h2>" +
+          "<ul>" +
+            "<li><strong>6–8 semaines avant</strong> : essai (teintes, style, tenue). Photos en lumière du jour + flash.</li>" +
+            "<li><strong>1 semaine</strong> : pas d’actifs irritants (AHA/BHA/retinol) ni soins agressifs.</li>" +
+            "<li><strong>Jour J</strong> : peau propre + hydratation ciblée, pas de nouvelle crème expérimentale.</li>" +
+          "</ul>" +
+
+          "<h2>2) Préparation peau (tenue & texture)</h2>" +
+          "<ul>" +
+            "<li><strong>Grasse</strong> : gel doux, hydratant léger, <em>primer</em> matifiant uniquement zone T.</li>" +
+            "<li><strong>Sèche</strong> : lait/huile, crème riche, base hydratante (attendre l’absorption).</li>" +
+            "<li><strong>Mixte</strong> : hydratation globale + matifier seulement là où ça brille.</li>" +
+            "<li>SPF si cérémonie jour (éviter formules très réfléchissantes sous flash).</li>" +
+          "</ul>" +
+
+          "<h2>3) Base longue tenue (méthode sandwich)</h2>" +
+          "<ul>" +
+            "<li><strong>Couches fines</strong> : correcteur local → voile de fond de teint → micro-poudre zone T → spray fixant → seconde couche légère si besoin.</li>" +
+            "<li><strong>Match teinte</strong> : mandibule + haut de poitrine; valider après 15–20 min (oxydation).</li>" +
+            "<li><strong>Anti-cernes</strong> : corriger d’abord (pêche/orange si bleu), puis anti-cernes proche peau.</li>" +
+          "</ul>" +
+
+          "<h2>4) Poudres & anti-flashback</h2>" +
+          "<ul>" +
+            "<li>Privilégier <strong>poudres teintées</strong> (légèrement chaudes) plutôt que translucides très blanches.</li>" +
+            "<li>Application par <strong>pression/roulage</strong> avec velours ou éponge, surtout zone T.</li>" +
+            "<li>Test flash téléphone : front/nez/contour de l’œil.</li>" +
+          "</ul>" +
+
+          "<h2>5) Yeux anti-larmes & longues heures</h2>" +
+          "<ul>" +
+            "<li><strong>Base crème</strong> + fards poudres fixés = tenue.</li>" +
+            "<li><strong>Liner/mascara waterproof</strong> ; sceller les crayons avec un fard de même teinte.</li>" +
+            "<li>Colle à cils <strong>sans latex</strong>; coins externes bien pressés.</li>" +
+            "<li>Éviter paillettes libres (migrations). Préférer nacres fines pressées.</li>" +
+          "</ul>" +
+
+          "<h2>6) Couleurs qui photographient bien</h2>" +
+          "<ul>" +
+            "<li><strong>Teint</strong> : réaliste, pas trop mat ni trop glowy; blush visible (rose chaud, pêche, berry doux).</li>" +
+            "<li><strong>Yeux</strong> : neutres chauds (moka, bronze, rosé doré) ou brun-prune; éviter gris sale.</li>" +
+            "<li><strong>Lèvres</strong> : nude brun-rosé, rose thé, corail doux; crayon ½ ton plus foncé pour la tenue.</li>" +
+          "</ul>" +
+
+          "<h2>7) Retouches & kit mariage</h2>" +
+          "<ul>" +
+            "<li>Papiers matifiants + mini poudre teintée (contour nez/front uniquement).</li>" +
+            "<li>Rouge à lèvres, coton-tiges, colle à cils, mini-brume.</li>" +
+            "<li>Blot avant photos majeures (sortie mairie, couple, soirée).</li>" +
+          "</ul>" +
+
+          "<h2>8) Checklists rapides</h2>" +
+          "<p><strong>À préparer</strong> : essai ✔︎ photos test ✔︎ mouchoirs ✔︎ kit retouche ✔︎.</p>" +
+          "<p><strong>Ordre</strong> : prep → primer ciblé → correction → fond de teint fin → anti-cernes → poudre → yeux → blush/bronzer → lèvres → spray.</p>" +
+
+          "<h2>9) Erreurs fréquentes → Solutions</h2>" +
+          "<ul>" +
+            "<li><strong>Grisaille</strong> : passer à une teinte à peine plus chaude + poudre teintée.</li>" +
+            "<li><strong>Plâtre</strong> : remplacer une couche épaisse par deux fines avec spray entre.</li>" +
+            "<li><strong>Bavures</strong> : waterproof, sceller les crayons, poudrer légèrement paupière supérieure.</li>" +
+          "</ul>" +
+
+          "<p class='badge'>Voir aussi : <a href='article-teint.html'>Routine Teint</a> • <a href='article-eyeliner.html'>Eyeliner</a> • <a href='article-lips.html'>Rouge longue tenue</a></p>"
+      });
+
+      // ================= EN =================
+      add('en', {
+        "article_bridal_title": "Bridal — Extreme longevity, emotion & photos",
+        "article_bridal_body":
+          "<p>Bridal makeup must look <strong>beautiful in person</strong>, <strong>last all day</strong> and <strong>photograph cleanly</strong>. This guide covers prep, thin-layer stacking, smart color correction, tear-proof eyes and efficient touch-ups.</p>" +
+
+          "<h2>1) Timeline & trial</h2>" +
+          "<ul>" +
+            "<li><strong>6–8 weeks out</strong>: trial (tones, style, wear). Daylight + flash test photos.</li>" +
+            "<li><strong>1 week</strong>: avoid harsh actives or new skincare.</li>" +
+            "<li><strong>Wedding day</strong>: clean skin + targeted hydration; no first-time products.</li>" +
+          "</ul>" +
+
+          "<h2>2) Skin prep (wear & texture)</h2>" +
+          "<ul>" +
+            "<li><strong>Oily</strong>: gentle gel, light moisturiser, <em>mattifying primer</em> only on T-zone.</li>" +
+            "<li><strong>Dry</strong>: milk/oil cleanse, rich cream, hydrating base (let it sink in).</li>" +
+            "<li><strong>Combo</strong>: global hydration + spot-mattify only shine areas.</li>" +
+            "<li>SPF for daytime ceremonies (avoid very reflective formulas under flash).</li>" +
+          "</ul>" +
+
+          "<h2>3) Long-wear base (layer “sandwich”)</h2>" +
+          "<ul>" +
+            "<li><strong>Thin layers</strong>: pinpoint corrector → sheer foundation → micro-set T-zone → setting mist → second light pass if needed.</li>" +
+            "<li><strong>Shade match</strong>: jawline + upper chest; confirm after 15–20 min (oxidation).</li>" +
+            "<li><strong>Concealer</strong>: correct first (peach/orange for blue), then skin-tone concealer.</li>" +
+          "</ul>" +
+
+          "<h2>4) Powders & flashback</h2>" +
+          "<ul>" +
+            "<li>Prefer <strong>tinted</strong> powders (slightly warm) over stark translucent whites.</li>" +
+            "<li>Press/roll method with puff or sponge; mainly T-zone.</li>" +
+            "<li>Phone flash test: forehead/nose/under-eye edges.</li>" +
+          "</ul>" +
+
+          "<h2>5) Tear-proof eyes</h2>" +
+          "<ul>" +
+            "<li><strong>Cream base</strong> + set with powders.</li>" +
+            "<li><strong>Waterproof</strong> liner/mascara; seal pencils with matching shadow.</li>" +
+            "<li><strong>Latex-free</strong> lash glue; secure outer corners.</li>" +
+            "<li>Avoid loose glitter; choose fine-pearled shimmers.</li>" +
+          "</ul>" +
+
+          "<h2>6) Photo-friendly colors</h2>" +
+          "<ul>" +
+            "<li><strong>Base</strong>: natural—not flat, not overly glowy. Blush visible (warm pink, peach, soft berry).</li>" +
+            "<li><strong>Eyes</strong>: warm neutrals (mocha, bronze, rose-gold) or brown-plum; skip dull greys.</li>" +
+            "<li><strong>Lips</strong>: brown-rose nude, tea-rose, soft coral; lip pencil half-tone deeper.</li>" +
+          "</ul>" +
+
+          "<h2>7) Touch-ups kit</h2>" +
+          "<ul>" +
+            "<li>Blotting papers + mini tinted powder (sides of nose/centre of forehead only).</li>" +
+            "<li>Lipstick, cotton buds, lash glue, mini mist.</li>" +
+            "<li>Blot before key photos (ceremony exit, couple, party).</li>" +
+          "</ul>" +
+
+          "<h2>8) Quick checklists</h2>" +
+          "<p><strong>Pack</strong>: trial ✔︎ test photos ✔︎ tissues ✔︎ touch-up kit ✔︎.</p>" +
+          "<p><strong>Order</strong>: prep → targeted primer → correction → sheer foundation → concealer → powder → eyes → blush/bronzer → lips → setting mist.</p>" +
+
+          "<h2>9) Common mistakes → Fixes</h2>" +
+          "<ul>" +
+            "<li><strong>Grey cast</strong> → slightly warmer shade + tinted powder.</li>" +
+            "<li><strong>Cakey</strong> → swap one thick layer for two thin layers with mist between.</li>" +
+            "<li><strong>Smudging</strong> → waterproof, seal pencils, lightly powder upper lid.</li>" +
+          "</ul>" +
+
+          "<p class='badge'>See also: <a href='article-teint.html'>Base Routine</a> • <a href='article-eyeliner.html'>Eyeliner</a> • <a href='article-lips.html'>Long-wear Lips</a></p>"
+      });
+
+      // ================= AR =================
+      add('ar', {
+        "article_bridal_title": "مكياج العروس — ثبات طويل، مشاعر وصور",
+        "article_bridal_body":
+          "<p>يجب أن يبدو مكياج العروس <strong>جميلاً على الواقع</strong>، <strong>ثابتاً طوال اليوم</strong> و<strong>نظيفاً في الصور/الفيديو</strong>. يشمل الدليل التحضير والطبقات الرقيقة والتصحيح اللوني ومكافحة الدموع والرتوش الذكية.</p>" +
+
+          "<h2>1) الجدول التجريبي</h2>" +
+          "<ul>" +
+            "<li><strong>قبل 6–8 أسابيع</strong>: تجربة (درجات/أسلوب/ثبات) + صور نهارية ومع فلاش.</li>" +
+            "<li><strong>قبل أسبوع</strong>: بدون عناية مهيّجة أو منتجات جديدة.</li>" +
+            "<li><strong>يوم الزفاف</strong>: بشرة نظيفة وترطيب موجّه، لا تجارب جديدة.</li>" +
+          "</ul>" +
+
+          "<h2>2) تحضير البشرة</h2>" +
+          "<ul>" +
+            "<li><strong>دهنية</strong>: جل لطيف، مرطّب خفيف، برايمر مطفٍ لمنطقة T فقط.</li>" +
+            "<li><strong>جافة</strong>: تنظيف حليب/زيت، كريم غني، قاعدة مرطِّبة.</li>" +
+            "<li><strong>مختلطة</strong>: ترطيب عام + مطّفي موضعي لمناطق اللمعان.</li>" +
+            "<li>واقٍ شمسي للمراسم النهارية (تفادي التركيبات العاكسة جداً مع الفلاش).</li>" +
+          "</ul>" +
+
+          "<h2>3) قاعدة طويلة الثبات (طبقات رقيقة)</h2>" +
+          "<ul>" +
+            "<li><strong>طبقات رقيقة</strong>: تصحيح موضعي → فاونديشن خفيف → تثبيت دقيق لمنطقة T → رذاذ تثبيت → طبقة خفيفة ثانية إذا لزم.</li>" +
+            "<li><strong>تطابق الدرجة</strong>: خط الفك + أعلى الصدر؛ تأكيد بعد 15–20 دقيقة (أكسدة).</li>" +
+            "<li><strong>الكونسيلر</strong>: تصحيح أولاً (خوخي/برتقالي للأزرق) ثم كونسيلر بلون البشرة.</li>" +
+          "</ul>" +
+
+          "<h2>4) البودرات والوميض</h2>" +
+          "<ul>" +
+            "<li>تفضيل <strong>بودرات ملوّنة</strong> تميل للدافئ بدل الشفافة البيضاء.</li>" +
+            "<li>طريقة كبس/لف بالإسفنجة خصوصاً منطقة T.</li>" +
+            "<li>اختبار فلاش للهاتف: الجبهة/الأنف/حواف تحت العين.</li>" +
+          "</ul>" +
+
+          "<h2>5) عيون مقاومة للدموع</h2>" +
+          "<ul>" +
+            "<li><strong>قاعدة كريمية</strong> مع تثبيت بظلال بودرة.</li>" +
+            "<li><strong>آيلاينر/ماسكارا مقاومان للماء</strong>؛ تثبيت الأقلام بظل مطابق.</li>" +
+            "<li><strong>غراء رموش بلا لاتكس</strong>؛ تثبيت الزوايا الخارجية جيداً.</li>" +
+            "<li>تجنّب الغليتر الحر؛ اختاري لمعات دقيقة مضغوطة.</li>" +
+          "</ul>" +
+
+          "<h2>6) ألوان مناسبة للصور</h2>" +
+          "<ul>" +
+            "<li><strong>القاعدة</strong>: طبيعية؛ ليست مطفاة تماماً ولا لامعة جداً. بلاشر واضح (وردي دافئ/خوخي/توتي لطيف).</li>" +
+            "<li><strong>العيون</strong>: نيود دافئ (موكا/برونزي/روز-غولد) أو بنّي-برقوقي؛ تجنّبي الرمادي الباهت.</li>" +
+            "<li><strong>الشفاه</strong>: نيود بنّي وردي، روز شاي، كورالي لطيف؛ قلم تحديد أغمق بنصف درجة.</li>" +
+          "</ul>" +
+
+          "<h2>7) حقيبة الرتوش</h2>" +
+          "<ul>" +
+            "<li>أوراق امتصاص + بودرة ملوّنة صغيرة (جوانب الأنف/وسط الجبهة فقط).</li>" +
+            "<li>روج، أعواد قطن، غراء رموش، رذاذ صغير.</li>" +
+            "<li>إزالة لمعان منطقة T قبل الصور المهمة.</li>" +
+          "</ul>" +
+
+          "<h2>8) قوائم سريعة</h2>" +
+          "<p><strong>جاهزية</strong>: تجربة ✔︎ صور ✔︎ مناديل ✔︎ حقيبة رتوش ✔︎.</p>" +
+          "<p><strong>الترتيب</strong>: تحضير → برايمر موضعي → تصحيح → فاونديشن خفيف → كونسيلر → بودرة → عيون → بلاشر/برونزر → شفاه → رذاذ.</p>" +
+
+          "<h2>9) أخطاء شائعة → حلول</h2>" +
+          "<ul>" +
+            "<li><strong>رمادية</strong> → درجة أدفأ قليلاً + بودرة ملوّنة.</li>" +
+            "<li><strong>تكتّل</strong> → بدّلي طبقة سميكة بطبقتين رقيقتين مع رذاذ بينهما.</li>" +
+            "<li><strong>لطخات</strong> → مقاوم للماء، تثبيت أقلام، بودرة خفيفة على الجفن العلوي.</li>" +
+          "</ul>" +
+
+          "<p class='badge'>شاهدي أيضاً: <a href='article-teint.html'>روتين القاعدة</a> • <a href='article-eyeliner.html'>الآيلاينر</a> • <a href='article-lips.html'>شفاه ثابتة</a></p>"
+      });
+    })();
+</script>
+
+
+</html>

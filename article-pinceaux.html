@@ -1,0 +1,274 @@
+
+<!doctype html>
+<html lang="fr">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="meta_title">Formation & Tutos MakeUp – BeautyLab</title>
+  <meta name="description" data-i18n-attr="content:meta_desc" content="Formations...">
+  <meta name="theme-color" content="#8a2be2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="i18n-data.js"></script>
+  <script defer src="i18n.js"></script>
+</head>
+<body>
+  <nav class="nav">
+  <div class="container">
+    <div class="brand"><div class="logo"></div> <span data-i18n="brand">BeautyLab • MakeUp</span></div>
+
+    <!-- Bouton menu mobile -->
+    <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+
+    <!-- Ajoute l'id navLinks -->
+    <div class="links" id="navLinks">
+      <a data-nav href="index.html" data-i18n="nav_home">Accueil</a>
+      <a data-nav href="cours.html" data-i18n="nav_courses">Cours</a>
+      <a data-nav href="a-propos.html" data-i18n="nav_about">À propos</a>
+      <a data-nav href="contact.html" data-i18n="nav_contact">Contact</a>
+      <a data-nav href="faq.html" data-i18n="nav_faq">FAQ</a>
+      <a class="btn" href="politique-confidentialite.html" data-i18n="nav_privacy">Confidentialité</a>
+      <a data-nav href="glossaire.html" data-i18n="nav_gloss">Glossaire</a>
+
+      <div class="lang">
+        <button id="langBtn" aria-label="Language" class="lang-btn"><span>🌐</span></button>
+        <div id="langMenu" class="lang-menu">
+          <button id="lang-fr">Français</button>
+          <button id="lang-en">English</button>
+          <button id="lang-ar">العربية</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+ <main class="container">
+    <article class="card">
+      <h1 data-i18n="article_brushes_title">Pinceaux : set & entretien</h1>
+      <div data-i18n-html="article_brushes_body"><p>Contenu…</p></div>
+      <p><a class="btn" href="cours.html" data-i18n="nav_courses">Cours</a></p>
+    </article>
+  </main>  <footer>
+    <div class="container">
+      <div class="cols">
+        <div>
+          <h3 data-i18n="brand">BeautyLab • MakeUp</h3>
+          <p class="badge">© <span id="year"></span> BeautyLab.</p>
+        </div>
+        <div>
+          <h4>Links</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+            <li><a href="cours.html" data-i18n="nav_courses">Cours</a></li>
+            <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+            <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <p class="badge"><a href="politique-confidentialite.html" data-i18n="nav_privacy">Confidentialité</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div id="cookie" class="cookie card" style="display:none">
+    <strong>Cookies</strong>
+    <p>We use cookies to improve your experience.</p>
+    <button id="acceptCookies" class="btn primary">OK</button>
+  </div>
+</body>
+<script>
+    // i18n-augment-brushes.js — "Pinceaux : set & entretien" FR/EN/AR
+    (function(){
+      window.I18N = window.I18N || {};
+      const add = (lang, obj)=> window.I18N[lang] = Object.assign(window.I18N[lang]||{}, obj);
+
+      // ================= FR =================
+      add('fr', {
+        "article_brushes_title": "Pinceaux : set & entretien — choisir, nettoyer, faire durer",
+        "article_brushes_body":
+          "<p>Un bon set de pinceaux simplifie tout : application plus nette, moins de produit gaspillé et une hygiène au top. Voici un guide clair pour <strong>choisir les formes</strong>, constituer un <strong>set minimal</strong> et <strong>entretenir</strong> sans abîmer.</p>" +
+
+          "<h2>1) Fibres & formes — le match selon les textures</h2>" +
+          "<ul>" +
+            "<li><strong>Synthétique (PBT)</strong> : idéal crèmes/liquides (fond de teint, anti-cernes, liner gel). Plus hygiénique, sèche vite.</li>" +
+            "<li><strong>Naturel</strong> (poils) : super pour poudres sèches (fards, poudres de finition). Toucher très «diffuseur». (Préférence perso/éthique → on trouve d’excellents <em>dupes</em> synthétiques.)</li>" +
+            "<li><strong>Formes clés</strong> : <em>kabuki plat</em> (couvre), <em>duo-fibre</em> (fondu ultra fin), <em>dôme poudre</em> (fixer sans plâtre), <em>angulaire</em> (blush/contour), <em>estompeur</em> yeux (blends propres), <em>pinceau crayon</em> (coin externe/ras de cils), <em>biseauté fin</em> (liner/sourcils).</li>" +
+          "</ul>" +
+
+          "<h2>2) Le set capsule (8 pièces pour tout faire)</h2>" +
+          "<ul>" +
+            "<li><strong>Teint</strong> : 1) kabuki fond de teint, 2) petit pinceau anti-cernes, 3) dôme poudre, 4) angulaire blush/bronzer.</li>" +
+            "<li><strong>Yeux</strong> : 5) plat pose-fard, 6) estompeur rond, 7) crayon/ras-de-cils, 8) biseauté liner + spoolie sourcils.</li>" +
+            "<li><strong>Bonus</strong> : éventail highlighter, duo-fibre pour flouter les bords (tenue + propreté).</li>" +
+          "</ul>" +
+
+          "<h2>3) Méthodes d’application (rapidité & propreté)</h2>" +
+          "<ul>" +
+            "<li><strong>Fond de teint</strong> : tapoter au kabuki puis passer l’éponge humide pour fusionner si besoin.</li>" +
+            "<li><strong>Anti-cernes</strong> : déposer au petit pinceau puis fondre au doigt/éponge (évite l’excès).</li>" +
+            "<li><strong>Poudre</strong> : presser/rouler avec le dôme (zone T), voile léger ailleurs.</li>" +
+            "<li><strong>Blush/bronzer</strong> : mouvements remontants avec l’angulaire; commencer léger, intensifier.</li>" +
+            "<li><strong>Yeux</strong> : poser au plat, fondre à l’estompeur, détailler au crayon; sceller les crayons par un fard.</li>" +
+          "</ul>" +
+
+          "<h2>4) Nettoyage & hygiène (sans abîmer)</h2>" +
+          "<ul>" +
+            "<li><strong>Après liquides/crèmes</strong> : <em>nettoyage rapide quotidien</em> (spray nettoyant pinceaux, essuyer sur chiffon).</li>" +
+            "<li><strong>1×/semaine</strong> : <em>lavage en profondeur</em> (eau tiède + savon doux/shampoing pinceaux). Mouiller uniquement les <em>fibres</em> (éviter la virole), masser, rincer.</li>" +
+            "<li><strong>Séchage</strong> : essorer délicatement, <em>reformer</em> la tête, faire sécher <em>tête vers le bas</em> (ou à plat légèrement inclinée). Pas de sèche-cheveux/eau chaude.</li>" +
+            "<li><strong>Désinfection</strong> : brumiser <em>légèrement</em> de l’alcool 70% sur <em>pinceaux synthétiques</em> pour usage rapide (éviter l’excès, surtout sur poils naturels).</li>" +
+          "</ul>" +
+
+          "<h2>5) Durée de vie & remplacement</h2>" +
+          "<ul>" +
+            "<li><strong>Signes d’usure</strong> : pertes abondantes de poils, forme évasée impossible à reformer, virole qui bouge.</li>" +
+            "<li><strong>Prévenir</strong> : ne jamais faire tremper au-delà des fibres; éviter de tordre; housses/guards pour voyager.</li>" +
+          "</ul>" +
+
+          "<h2>6) Budget, éthique & rangement</h2>" +
+          "<ul>" +
+            "<li><strong>Budget</strong> : mieux vaut 6–8 <em>bons</em> pinceaux polyvalents que 20 moyens.</li>" +
+            "<li><strong>Vegan</strong> : les sets synthétiques modernes imitent très bien le naturel, surtout pour poudres.</li>" +
+            "<li><strong>Rangement</strong> : pot aéré à la verticale (chez soi) ; trousse zippée/rigide (transport).</li>" +
+          "</ul>" +
+
+          "<h2>Checklist minute</h2>" +
+          "<ul>" +
+            "<li>8 pièces = visage complet.</li>" +
+            "<li>Liquides/crèmes → fibre synthétique; poudres → synthétique ou naturel.</li>" +
+            "<li>Lavage doux hebdo, séchage tête en bas.</li>" +
+            "<li>Spray rapide après produits gras & pour yeux/lèvres.</li>" +
+          "</ul>" +
+
+          "<p class='badge'>Voir aussi : <a href='article-teint.html'>Routine Teint</a> • <a href='article-eyeliner.html'>Eyeliner</a> • <a href='glossaire.html'>Glossaire</a> • <a href='cours.html'>Tous les cours</a></p>"
+      });
+
+      // ================= EN =================
+      add('en', {
+        "article_brushes_title": "Brushes: kit & care — choose, clean, make them last",
+        "article_brushes_body":
+          "<p>A solid brush kit means cleaner application, less waste and better hygiene. Here’s a practical guide to <strong>shapes</strong>, a <strong>capsule set</strong>, and <strong>care</strong> that won’t damage fibers.</p>" +
+
+          "<h2>1) Fibers & shapes — match to textures</h2>" +
+          "<ul>" +
+            "<li><strong>Synthetic (PBT)</strong>: best for creams/liquids (foundation, concealer, gel liner). More hygienic, quicker to dry.</li>" +
+            "<li><strong>Natural hair</strong>: great for dry powders (shadows, finishing powders). Many excellent synthetic dupes exist.</li>" +
+            "<li><strong>Key shapes</strong>: <em>flat kabuki</em> (coverage), <em>duo-fiber</em> (sheer blend), <em>powder dome</em>, <em>angled</em> (blush/contour), <em>round blender</em> (eyes), <em>pencil</em> (outer V/lash line), <em>fine angled</em> (liner/brows).</li>" +
+          "</ul>" +
+
+          "<h2>2) Capsule kit (8 brushes to do it all)</h2>" +
+          "<ul>" +
+            "<li><strong>Face</strong>: 1) foundation kabuki, 2) small concealer, 3) powder dome, 4) angled blush/bronzer.</li>" +
+            "<li><strong>Eyes</strong>: 5) flat shader, 6) round blender, 7) pencil/smudger, 8) fine angled + spoolie.</li>" +
+            "<li><strong>Bonus</strong>: fan highlighter, duo-fiber to diffuse edges.</li>" +
+          "</ul>" +
+
+          "<h2>3) Application tips</h2>" +
+          "<ul>" +
+            "<li><strong>Foundation</strong>: tap with kabuki, then fuse with a damp sponge if needed.</li>" +
+            "<li><strong>Concealer</strong>: place with the small brush, melt with finger/sponge.</li>" +
+            "<li><strong>Powder</strong>: press/roll on T-zone; light veil elsewhere.</li>" +
+            "<li><strong>Blush/Bronzer</strong>: upward strokes with the angled brush; build gradually.</li>" +
+            "<li><strong>Eyes</strong>: pack with shader, blend with blender, detail with pencil; set pencils with matching shadow.</li>" +
+          "</ul>" +
+
+          "<h2>4) Cleaning & hygiene</h2>" +
+          "<ul>" +
+            "<li><strong>After creams/liquids</strong>: daily <em>quick clean</em> (brush cleaner spray, wipe on cloth).</li>" +
+            "<li><strong>Weekly</strong>: <em>deep wash</em> (lukewarm water + gentle soap/brush shampoo). Wet <em>bristles only</em>, avoid ferrule.</li>" +
+            "<li><strong>Drying</strong>: squeeze gently, <em>reshape</em>, dry <em>head-down</em> or flat angled; no hot air.</li>" +
+            "<li><strong>Sanitise</strong>: light mist of 70% alcohol on <em>synthetic</em> brushes for quick turnaround (go easy; natural hair can dry out).</li>" +
+          "</ul>" +
+
+          "<h2>5) Lifespan & replacement</h2>" +
+          "<ul>" +
+            "<li><strong>Replace</strong> when heavy shedding, splayed shape that won’t reform, or loose ferrule.</li>" +
+            "<li><strong>Prevent</strong>: never soak past bristles; don’t twist; use guards/cases for travel.</li>" +
+          "</ul>" +
+
+          "<h2>6) Budget, ethics & storage</h2>" +
+          "<ul>" +
+            "<li><strong>Budget</strong>: 6–8 good, versatile brushes beat 20 mediocre ones.</li>" +
+            "<li><strong>Vegan</strong>: modern synthetics rival natural hair, even for powders.</li>" +
+            "<li><strong>Storage</strong>: upright cup at home; zipped/rigid case on the go.</li>" +
+          "</ul>" +
+
+          "<h2>One-minute checklist</h2>" +
+          "<ul>" +
+            "<li>8 pieces = full face.</li>" +
+            "<li>Liquids/creams → synthetic; powders → synthetic or natural.</li>" +
+            "<li>Weekly gentle wash, head-down dry.</li>" +
+            "<li>Quick sanitise after greasy products & for eyes/lips.</li>" +
+          "</ul>" +
+
+          "<p class='badge'>See also: <a href='article-teint.html'>Base routine</a> • <a href='article-eyeliner.html'>Eyeliner</a> • <a href='glossaire.html'>Glossary</a> • <a href='cours.html'>All courses</a></p>"
+      });
+
+      // ================= AR =================
+      add('ar', {
+        "article_brushes_title": "الفرش: الطقم والعناية — الاختيار والتنظيف وإطالة العمر",
+        "article_brushes_body":
+          "<p>طقم فرش جيد يعني تطبيقاً أنظف، هدراً أقل، ونظافة أفضل. هذا دليل عملي لـ<strong>الأشكال</strong>، <strong>طقم مصغّر</strong>، و<strong>العناية</strong> دون إتلاف الألياف.</p>" +
+
+          "<h2>1) الألياف والأشكال — التوافق مع القوام</h2>" +
+          "<ul>" +
+            "<li><strong>اصطناعي (PBT)</strong>: مثالي للكريمات/السوائل (فاونديشن، كونسيلر، آيلاينر جل). صحي أكثر ويجف سريعاً.</li>" +
+            "<li><strong>شعر طبيعي</strong>: ممتاز للبودرات الجافة (ظلال، بودرة تثبيت). تتوفر بدائل اصطناعية ممتازة.</li>" +
+            "<li><strong>أشكال مهمة</strong>: <em>كابوكي مسطّح</em> (تغطية)، <em>ديو-فايبر</em> (دمج خفيف)، <em>قبة بودرة</em>، <em>مائل</em> (بلاشر/كونتور)، <em>مدوّر للدمج</em> للعين، <em>قلم</em> للحواف، <em>مائل رفيع</em> (آيلاينر/حواجب).</li>" +
+          "</ul>" +
+
+          "<h2>2) طقم مصغّر (8 فرش تكفي لكل شيء)</h2>" +
+          "<ul>" +
+            "<li><strong>الوجه</strong>: 1) كابوكي فاونديشن، 2) صغيرة للكونسيلر، 3) قبة بودرة، 4) مائلة للبلاشر/البرونزر.</li>" +
+            "<li><strong>العين</strong>: 5) مسطّحة للتطبيق، 6) مدمّجة للدمج، 7) قلم/طمس، 8) مائلة رفيعة + فرشاة حلزونية.</li>" +
+            "<li><strong>إضافي</strong>: مروحة هايلايتر، ديو-فايبر لتنعيم الحواف.</li>" +
+          "</ul>" +
+
+          "<h2>3) نصائح تطبيق</h2>" +
+          "<ul>" +
+            "<li><strong>فاونديشن</strong>: تربيت بالكابوكي، ثم دمج بالإسفنجة الرطبة عند الحاجة.</li>" +
+            "<li><strong>كونسيلر</strong>: وضع بالفرشاة الصغيرة ثم دمج بالأصبع/الإسفنجة.</li>" +
+            "<li><strong>بودرة</strong>: كبس/لف على منطقة T؛ طبقة خفيفة لباقي الوجه.</li>" +
+            "<li><strong>بلاشر/برونزر</strong>: ضربات للأعلى بالفرشاة المائلة؛ البناء تدريجي.</li>" +
+            "<li><strong>العين</strong>: وضع بالمسطّحة، دمج بالمدوّرة، تفاصيل بالقلم؛ تثبيت الأقلام بظل مطابق.</li>" +
+          "</ul>" +
+
+          "<h2>4) التنظيف والنظافة</h2>" +
+          "<ul>" +
+            "<li><strong>بعد الكريمات/السوائل</strong>: <em>تنظيف سريع يومي</em> (اسبراي تنظيف وفرش على قماش).</li>" +
+            "<li><strong>أسبوعياً</strong>: <em>غسل عميق</em> (ماء فاتر + صابون لطيف/شامبو فرش). تبليل <em>الشعيرات فقط</em> وتجنّب المعدن.</li>" +
+            "<li><strong>تجفيف</strong>: عصر برفق، <em>إعادة تشكيل</em>، تجفيف <em>رأساً لأسفل</em> أو مسطّحاً بزاوية؛ بدون هواء ساخن.</li>" +
+            "<li><strong>تعقيم</strong>: رذاذ خفيف كحول 70% على <em>الفرش الاصطناعية</em> للاستخدام السريع (تجنّبي الإفراط؛ الطبيعي قد يجف).</li>" +
+          "</ul>" +
+
+          "<h2>5) العمر والاستبدال</h2>" +
+          "<ul>" +
+            "<li><strong>يُستبدل</strong> عند تساقط شديد، تفسّخ الشكل، أو ارتخاء المعدن.</li>" +
+            "<li><strong>وقاية</strong>: عدم النقع بعد الشعيرات؛ لا لليّ؛ حمايات/حافظة للسفر.</li>" +
+          "</ul>" +
+
+          "<h2>6) الميزانية والأخلاق والتخزين</h2>" +
+          "<ul>" +
+            "<li><strong>ميزانية</strong>: 6–8 فرش جيدة ومتعدّدة الاستخدام أفضل من 20 متوسطة.</li>" +
+            "<li><strong>خيار نباتي</strong>: الاصطناعي الحديث يضاهي الطبيعي حتى للبودرة.</li>" +
+            "<li><strong>تخزين</strong>: كوب رأسي في المنزل؛ حافظة صلبة أثناء التنقل.</li>" +
+          "</ul>" +
+
+          "<h2>قائمة سريعة</h2>" +
+          "<ul>" +
+            "<li>8 قطع = وجه كامل.</li>" +
+            "<li>سوائل/كريمات → اصطناعي؛ بودرات → اصطناعي أو طبيعي.</li>" +
+            "<li>غسل لطيف أسبوعي، وتجفيف للأسفل.</li>" +
+            "<li>تعقيم خفيف بعد المنتجات الدسمة وللعين/الشفاه.</li>" +
+          "</ul>" +
+
+          "<p class='badge'>شاهدي أيضاً: <a href='article-teint.html'>روتين القاعدة</a> • <a href='article-eyeliner.html'>الآيلاينر</a> • <a href='glossaire.html'>المعجم</a> • <a href='cours.html'>كل الدورات</a></p>"
+      });
+    })();
+</script>
+
+</html>

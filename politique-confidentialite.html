@@ -1,6 +1,7 @@
 
 <!doctype html>
 <html lang="fr">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,27 +17,34 @@
 </head>
 <body>
   <nav class="nav">
-    <div class="container">
-      <div class="brand"><div class="logo"></div> <span data-i18n="brand">BeautyLab • MakeUp</span></div>
-      <div class="links">
-        <a data-nav href="index.html" data-i18n="nav_home">Accueil</a>
-        <a data-nav href="cours.html" data-i18n="nav_courses">Cours</a>
-        <a data-nav href="a-propos.html" data-i18n="nav_about">À propos</a>
-        <a data-nav href="contact.html" data-i18n="nav_contact">Contact</a>
-        <a data-nav href="faq.html" data-i18n="nav_faq">FAQ</a>
-        <a class="btn" href="politique-confidentialite.html" data-i18n="nav_privacy">Confidentialité</a>
-        <a data-nav href="glossaire.html" data-i18n="nav_gloss">Glossaire</a>
-        <div class="lang">
-          <button id="langBtn" aria-label="Language" class="lang-btn"><span>🌐</span></button>
-          <div id="langMenu" class="lang-menu">
-            <button id="lang-fr">Français</button>
-            <button id="lang-en">English</button>
-            <button id="lang-ar">العربية</button>
-          </div>
+  <div class="container">
+    <div class="brand"><div class="logo"></div> <span data-i18n="brand">BeautyLab • MakeUp</span></div>
+
+    <!-- Bouton menu mobile -->
+    <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+
+    <!-- Ajoute l'id navLinks -->
+    <div class="links" id="navLinks">
+      <a data-nav href="index.html" data-i18n="nav_home">Accueil</a>
+      <a data-nav href="cours.html" data-i18n="nav_courses">Cours</a>
+      <a data-nav href="a-propos.html" data-i18n="nav_about">À propos</a>
+      <a data-nav href="contact.html" data-i18n="nav_contact">Contact</a>
+      <a data-nav href="faq.html" data-i18n="nav_faq">FAQ</a>
+      <a class="btn" href="politique-confidentialite.html" data-i18n="nav_privacy">Confidentialité</a>
+      <a data-nav href="glossaire.html" data-i18n="nav_gloss">Glossaire</a>
+
+      <div class="lang">
+        <button id="langBtn" aria-label="Language" class="lang-btn"><span>🌐</span></button>
+        <div id="langMenu" class="lang-menu">
+          <button id="lang-fr">Français</button>
+          <button id="lang-en">English</button>
+          <button id="lang-ar">العربية</button>
         </div>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
+
   <main class="container">
 
   <h1 data-i18n="privacy_title">Politique de confidentialité</h1>
@@ -45,9 +53,13 @@
     window.__afterI18N = function(dict){
       const blocks = dict['privacy_blocks']||[];
       const wrap = document.getElementById('privacy_blocks'); wrap.innerHTML='';
-      blocks.forEach(([title, body])=>{ const card=document.createElement('div'); card.className='card';
-        const h=document.createElement('h3'); h.innerText=title; const p=document.createElement('p'); p.innerText=body;
-        card.appendChild(h); card.appendChild(p); wrap.appendChild(card); });
+     blocks.forEach(([title, body])=>{
+  const card = document.createElement('div'); card.className = 'card';
+  const h = document.createElement('h3'); h.textContent = title;
+  const content = document.createElement('div'); content.className = 'rich';
+  content.innerHTML = body; // <-- interprète <p>, <ul>, <a>, etc.
+  card.appendChild(h); card.appendChild(content); wrap.appendChild(card);
+});
     }
   </script>
 
@@ -82,3 +94,139 @@
   </div>
 </body>
 </html>
+<script>
+    // i18n-augment-privacy.js — Politique réaliste pour blog maquillage
+    (function(){
+      window.I18N = window.I18N || {};
+      const add = (lang, obj)=> window.I18N[lang] = Object.assign(window.I18N[lang]||{}, obj);
+
+      // =============== FR (Blog maquillage) ===============
+      add('fr', {
+        "privacy_title": "Politique de confidentialité",
+        "privacy_blocks": [
+          ["Qui nous sommes",
+            "<p>BeautyLab est un <strong>blog de maquillage</strong> proposant articles, tutoriels et conseils. Nous ne vendons pas de produits directement. Nous pouvons monétiser via <em>liens affiliés</em>, contenus sponsorisés clairement signalés et diffusion publicitaire.</p>"],
+          ["Quelles données nous traitons",
+            "<ul><li><strong>Newsletter</strong> : email (et éventuellement prénom) lorsque vous vous abonnez.</li><li><strong>Commentaires</strong> : nom/pseudo, email (non affiché), contenu du commentaire, adresse IP abrégée (anti-spam).</li><li><strong>Formulaire contact</strong> : nom, email, message.</li><li><strong>Mesure d’audience</strong> : pages vues, temps, appareil/navigateur, IP anonymisée (si vous l’acceptez).</li><li><strong>Publicité</strong> : événements publicitaires agrégés (si consentis).</li></ul>"],
+          ["Base légale & finalités",
+            "<ul><li><strong>Exécution</strong> : vous envoyer la newsletter demandée.</li><li><strong>Intérêt légitime</strong> : modération anti-spam, sécurité, statistiques internes minimales.</li><li><strong>Consentement</strong> : cookies d’audience et publicitaires ; réception d’emails marketing.</li><li><strong>Obligation légale</strong> : réponses aux demandes des autorités, gestion des droits RGPD.</li></ul>"],
+          ["Cookies & bandeau de consentement",
+            "<p>À l’arrivée, un bandeau vous permet d’<strong>accepter</strong> ou <strong>refuser</strong> les cookies non essentiels (analytics, publicité). Vous pouvez modifier votre choix à tout moment en ré-ouvrant le bandeau ou en effaçant les cookies du site.</p>"],
+          ["Analytics (mesure d’audience)",
+            "<p>Nous utilisons une solution d’analytics (ex. Google Analytics avec IP anonymisée) uniquement <strong>après consentement</strong>. Les rapports sont agrégés et ne servent pas à vous profiler individuellement.</p>"],
+          ["Publicité (Google Ads/AdSense)",
+            "<p>Si vous y consentez, des balises publicitaires peuvent se charger (Google Ads/AdSense). Elles permettent de <strong>mesurer</strong> les performances de nos contenus et d’<strong>adapter</strong> la diffusion publicitaire. Sans consentement, rien n’est déposé (hors cookies strictement nécessaires).</p>"],
+          ["Liens affiliés & contenus sponsorisés",
+            "<p>Certains liens vers des produits beauté sont des <strong>liens affiliés</strong> : si vous achetez, nous pouvons toucher une petite commission sans surcoût pour vous. Les articles sponsorisés sont <strong>signalés en tête d’article</strong> (mention « sponsorisé » ou « partenariat »).</p>"],
+          ["Contenus intégrés (YouTube, Instagram, TikTok, Pinterest)",
+            "<p>Les lecteurs vidéo ou publications intégrées peuvent déposer leurs propres cookies si vous les activez. Nous affichons un <strong>place-holder</strong> demandant votre accord avant chargement (lorsque c’est possible).</p>"],
+          ["Commentaires & anti-spam",
+            "<p>Quand vous commentez, nous stockons votre message, votre pseudo et votre email (non publié) pour vous notifier des réponses si vous le demandez. L’IP (abrégée) et l’agent utilisateur peuvent être vérifiés par un <strong>service anti-spam</strong>. Nous supprimons les contenus illégaux ou hors charte.</p>"],
+          ["Concours & cadeaux",
+            "<p>Lors de <strong>giveaways</strong>, nous collectons uniquement les données nécessaires à la remise du lot (ex. nom, email, adresse). Si un sponsor expédie directement le lot, nous lui transmettons <strong>uniquement</strong> les infos nécessaires après vous en avoir informé(e).</p>"],
+          ["Newsletter & désinscription",
+            "<p>Vous recevez la newsletter uniquement si vous l’avez demandée (double opt-in lorsque disponible). Vous pouvez vous <strong>désinscrire</strong> en un clic depuis chaque email.</p>"],
+          ["Hébergement & sécurité",
+            "<p>Le site est hébergé chez un prestataire européen/assimilé offrant chiffrement en transit (HTTPS), sauvegardes et protection réseau. Accès aux comptes limités au strict nécessaire.</p>"],
+          ["Durées de conservation",
+            "<ul><li>Commentaires : pendant la vie de l’article, puis archivage/suppression sur demande.</li><li>Newsletter : tant que vous êtes abonné(e), puis suppression sous 3 mois après désinscription.</li><li>Contact : 24 mois maximum.</li><li>Logs techniques : durée courte pour sécurité.</li></ul>"],
+          ["Vos droits",
+            "<p>Accès, rectification, effacement, limitation, opposition, portabilité, et retrait du consentement à tout moment. Contact : <a href='mailto:dpo@beautylab.site'>dpo@beautylab.site</a>. Vous pouvez saisir l’autorité de contrôle compétente.</p>"],
+          ["Transferts hors UE",
+            "<p>Certains prestataires (emailing, analytics, publicité) peuvent être situés hors UE. Nous utilisons des <strong>garanties adéquates</strong> (clauses contractuelles types, décision d’adéquation) et minimisons les données transférées.</p>"],
+          ["Données sensibles & mineurs",
+            "<p>Nous ne demandons pas de <strong>données sensibles</strong> (santé, biométrie, etc.). Le blog s’adresse aux 16 ans et plus.</p>"],
+          ["Contact",
+            "<p>Support : <a href='mailto:support@beautylab.site'>support@beautylab.site</a> — DPO : <a href='mailto:dpo@beautylab.site'>dpo@beautylab.site</a></p>"],
+          ["Dernière mise à jour",
+            "31/08/2025"]
+        ]
+      });
+
+      // =============== EN ===============
+      add('en', {
+        "privacy_title": "Privacy Policy",
+        "privacy_blocks": [
+          ["Who we are",
+            "<p>BeautyLab is a <strong>makeup blog</strong> with articles, tutorials and tips. We don’t sell products. Monetisation may include <em>affiliate links</em>, clearly labelled sponsored pieces and ads.</p>"],
+          ["What data we process",
+            "<ul><li><strong>Newsletter</strong>: email (and optional name) when you subscribe.</li><li><strong>Comments</strong>: name/alias, email (not displayed), comment text, truncated IP (anti-spam).</li><li><strong>Contact form</strong>: name, email, message.</li><li><strong>Analytics</strong>: page views, time, device/browser, anonymised IP (if consented).</li><li><strong>Advertising</strong>: aggregated ad events (if consented).</li></ul>"],
+          ["Legal bases & purposes",
+            "<ul><li><strong>Contract</strong>: send the newsletter you asked for.</li><li><strong>Legitimate interest</strong>: anti-spam, security, minimal internal stats.</li><li><strong>Consent</strong>: analytics/advertising cookies; marketing emails.</li><li><strong>Legal obligation</strong>: handle statutory requests and data rights.</li></ul>"],
+          ["Cookies & consent banner",
+            "<p>On first visit a banner lets you <strong>accept</strong> or <strong>refuse</strong> non-essential cookies (analytics/ads). You can change your choice anytime by reopening the banner or clearing this site’s cookies.</p>"],
+          ["Analytics",
+            "<p>We use an analytics solution (e.g., Google Analytics with IP anonymisation) only <strong>after consent</strong>. Reports are aggregated and not used to profile you individually.</p>"],
+          ["Advertising (Google Ads/AdSense)",
+            "<p>If you consent, ad tags may load (Google Ads/AdSense) to <strong>measure</strong> content performance and <strong>optimise</strong> ad delivery. Without consent, no such cookies are set.</p>"],
+          ["Affiliate links & sponsorships",
+            "<p>Some product links are <strong>affiliate</strong> links: if you buy, we may earn a small commission at no extra cost. Sponsored posts are <strong>clearly labelled</strong> at the top of the article.</p>"],
+          ["Embedded content (YouTube, Instagram, TikTok, Pinterest)",
+            "<p>Embedded players/posts may set their own cookies when you activate them. We use <strong>placeholders</strong> and ask your approval before loading whenever feasible.</p>"],
+          ["Comments & anti-spam",
+            "<p>When you comment we store your message, alias and email (not published) to notify replies if you request it. Truncated IP and user agent may be checked by an <strong>anti-spam</strong> service. Illegal or off-topic content may be removed.</p>"],
+          ["Giveaways",
+            "<p>For <strong>giveaways</strong> we collect only what’s needed to deliver prizes. If a sponsor ships directly, we share <strong>only necessary</strong> winner details after informing you.</p>"],
+          ["Newsletter & unsubscribe",
+            "<p>You receive the newsletter only if you asked for it (double opt-in when available). You can <strong>unsubscribe</strong> anytime via the link in each email.</p>"],
+          ["Hosting & security",
+            "<p>Hosted with HTTPS, backups and network protections. Account access restricted to need-to-know.</p>"],
+          ["Retention",
+            "<ul><li>Comments: for the article’s lifetime; archived/removed on request.</li><li>Newsletter: while subscribed; deleted within 3 months after unsubscribe.</li><li>Contact: up to 24 months.</li><li>Logs: short security retention.</li></ul>"],
+          ["Your rights",
+            "<p>Access, rectification, erasure, restriction, objection, portability and consent withdrawal at any time. Contact: <a href='mailto:dpo@beautylab.site'>dpo@beautylab.site</a>. You may contact your supervisory authority.</p>"],
+          ["International transfers",
+            "<p>Some providers (email, analytics, ads) may be outside the EEA. We rely on <strong>appropriate safeguards</strong> (SCCs/adequacy) and minimise transferred data.</p>"],
+          ["Sensitive data & minors",
+            "<p>We do not request <strong>sensitive data</strong>. The blog targets users aged 16+.</p>"],
+          ["Contact",
+            "<p>Support: <a href='mailto:support@beautylab.site'>support@beautylab.site</a> — DPO: <a href='mailto:dpo@beautylab.site'>dpo@beautylab.site</a></p>"],
+          ["Last updated",
+            "31/08/2025"]
+        ]
+      });
+
+      // =============== AR ===============
+      add('ar', {
+        "privacy_title": "سياسة الخصوصية",
+        "privacy_blocks": [
+          ["من نحن",
+            "<p>BeautyLab هو <strong>مدوّنة مكياج</strong> تقدّم مقالات وشروحات ونصائح. لا نبيع منتجات بشكل مباشر. قد نحقق دخلاً عبر <em>روابط أفلييت</em> ومحتوى برعاية موضّح بوضوح وإعلانات.</p>"],
+          ["ما البيانات التي نعالجها",
+            "<ul><li><strong>النشرة البريدية</strong>: البريد (واسم اختياري) عند الاشتراك.</li><li><strong>التعليقات</strong>: اسم/لقب، بريد (غير معلن)، نص التعليق، IP مختصر (لمكافحة السبام).</li><li><strong>نموذج التواصل</strong>: الاسم والبريد والرسالة.</li><li><strong>التحليلات</strong>: صفحات مشاهدة، وقت، الجهاز/المتصفح، IP مجهّل (بعد الموافقة).</li><li><strong>الإعلانات</strong>: بيانات مُجمّعة للأداء (بعد الموافقة).</li></ul>"],
+          ["الأسس القانونية والأغراض",
+            "<ul><li><strong>عقد</strong>: إرسال النشرة التي طلبتها.</li><li><strong>مصلحة مشروعة</strong>: مكافحة السبام، الأمان، إحصاءات داخلية محدودة.</li><li><strong>موافقة</strong>: كوكيز التحليلات والإعلانات؛ رسائل تسويقية.</li><li><strong>التزام قانوني</strong>: الاستجابة لطلبات الجهات المختصة وحقوق البيانات.</li></ul>"],
+          ["الكوكيز وشريط الموافقة",
+            "<p>يتيح لك الشريط عند الزيارة <strong>قبول</strong> أو <strong>رفض</strong> الكوكيز غير الضرورية (تحليلات/إعلانات). يمكنك تعديل اختيارك لاحقاً بإعادة فتح الشريط أو حذف كوكيز الموقع.</p>"],
+          ["التحليلات",
+            "<p>نستخدم أداة تحليلات (مثل Google Analytics مع إخفاء IP) فقط <strong>بعد الموافقة</strong>. التقارير مُجمّعة ولا تُستخدم لبناء ملف تعريف فردي.</p>"],
+          ["الإعلانات (Google Ads/AdSense)",
+            "<p>بعد موافقتك قد تُحمَّل وسوم الإعلانات لقياس الأداء وتحسين العرض. بدون موافقة، لا يتم تعيين هذه الكوكيز.</p>"],
+          ["روابط الأفلييت والرعاية",
+            "<p>بعض الروابط إلى منتجات التجميل تكون <strong>أفلييت</strong>: إذا اشتريتِ فقد نحصل على عمولة صغيرة دون كلفة إضافية عليكِ. المقالات برعاية <strong>موضّحة</strong> في بداية الموضوع.</p>"],
+          ["محتوى مضمَّن (يوتيوب/إنستغرام/تيك توك/بنترست)",
+            "<p>قد تضع المشغلات والمنشورات المضمّنة كوكيزها الخاصة عند تفعيلها. نعرض <strong>عنصرًا بديلًا</strong> ونطلب موافقتك قبل التحميل متى أمكن.</p>"],
+          ["التعليقات ومكافحة السبام",
+            "<p>نحفظ تعليقك ولقبك وبريدك (غير معلن) لإشعارات الرد عند الطلب. قد نتحقق من IP المقتطع ووكيل المستخدم عبر خدمة <strong>مكافحة السبام</strong>. قد نحذف المحتوى المخالف.</p>"],
+          ["الهدايا والمسابقات",
+            "<p>نجمع فقط ما يلزم لتسليم الجوائز. إذا شحن الراعي مباشرة، نشارك <strong>البيانات الضرورية فقط</strong> بعد إعلامك.</p>"],
+          ["النشرة وإلغاء الاشتراك",
+            "<p>لا يصلك البريد إلا بطلبك (تأكيد مزدوج حين يتوفر). يمكنك <strong>إلغاء الاشتراك</strong> عبر رابط داخل كل رسالة.</p>"],
+          ["الاستضافة والأمان",
+            "<p>استضافة مع HTTPS ونسخ احتياطي وحماية شبكة. وصول الحسابات على أساس الحاجة فقط.</p>"],
+          ["فترات الاحتفاظ",
+            "<ul><li>التعليقات: طوال عمر المقال؛ مع الأرشفة/الحذف عند الطلب.</li><li>النشرة: ما دمتِ مشتركة؛ ثم حذف خلال 3 أشهر بعد الإلغاء.</li><li>التواصل: حتى 24 شهراً.</li><li>السجلات: فترات قصيرة لأغراض الأمان.</li></ul>"],
+          ["حقوقك",
+            "<p>الوصول والتصحيح والحذف والتقييد والاعتراض وقابلية النقل وسحب الموافقة. تواصل: <a href='mailto:dpo@beautylab.site'>dpo@beautylab.site</a>.</p>"],
+          ["التحويلات الدولية",
+            "<p>بعض المزوّدين (البريد، التحليلات، الإعلانات) خارج المنطقة الاقتصادية الأوروبية. نعتمد <strong>ضمانات مناسبة</strong> ونقلًا مُقلّلاً.</p>"],
+          ["البيانات الحساسة والقُصّر",
+            "<p>لا نطلب <strong>بيانات حساسة</strong>. المدوّنة مخصّصة لمن أعمارهم 16+.</p>"],
+          ["التواصل",
+            "<p>الدعم: <a href='mailto:support@beautylab.site'>support@beautylab.site</a> — مسؤول الخصوصية: <a href='mailto:dpo@beautylab.site'>dpo@beautylab.site</a></p>"],
+          ["آخر تحديث",
+            "31/08/2025"]
+        ]
+      });
+    })();
+</script>
