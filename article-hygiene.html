@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title data-i18n="meta_title">Formation & Tutos MakeUp – BeautyLab</title>
+    <meta name="description" data-i18n-attr="content:meta_desc" content="Formations...">
+    <meta name="theme-color" content="#8a2be2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="i18n-data.js"></script>
+    <script defer src="i18n.js"></script>
+</head>
+<body>
+<nav class="nav">
+    <div class="container">
+        <div class="brand"><div class="logo"></div> <span data-i18n="brand">BeautyLab • MakeUp</span></div>
+        <div class="links">
+            <a data-nav href="index.html" data-i18n="nav_home">Accueil</a>
+            <a data-nav href="cours.html" data-i18n="nav_courses">Cours</a>
+            <a data-nav href="a-propos.html" data-i18n="nav_about">À propos</a>
+            <a data-nav href="contact.html" data-i18n="nav_contact">Contact</a>
+            <a data-nav href="faq.html" data-i18n="nav_faq">FAQ</a>
+            <a class="btn" href="politique-confidentialite.html" data-i18n="nav_privacy">Confidentialité</a>
+            <a data-nav href="glossaire.html" data-i18n="nav_gloss">Glossaire</a>
+            <div class="lang">
+                <button id="langBtn" aria-label="Language" class="lang-btn"><span>🌐</span></button>
+                <div id="langMenu" class="lang-menu">
+                    <button id="lang-fr">Français</button>
+                    <button id="lang-en">English</button>
+                    <button id="lang-ar">العربية</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <article class="card">
+        <h1 data-i18n="article_hygiene_title">Hygiène & entretien</h1>
+        <div data-i18n-html="article_hygiene_body"><p>...</p></div>
+        <p><a class="btn" href="cours.html" data-i18n="nav_courses">Cours</a></p>
+    </article>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="cols">
+            <div>
+                <h3 data-i18n="brand">BeautyLab • MakeUp</h3>
+                <p class="badge">© <span id="year"></span> BeautyLab.</p>
+            </div>
+            <div>
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="index.html" data-i18n="nav_home">Accueil</a></li>
+                    <li><a href="cours.html" data-i18n="nav_courses">Cours</a></li>
+                    <li><a href="faq.html" data-i18n="nav_faq">FAQ</a></li>
+                    <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <p class="badge"><a href="politique-confidentialite.html" data-i18n="nav_privacy">Confidentialité</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div id="cookie" class="cookie card" style="display:none">
+    <strong>Cookies</strong>
+    <p>We use cookies to improve your experience.</p>
+    <button id="acceptCookies" class="btn primary">OK</button>
+</div>
+</body>
+
+<script>
+    // i18n-augment-hygiene.js — "Hygiène & entretien" FR/EN/AR
+    (function(){
+      window.I18N = window.I18N || {};
+      const add = (lang, obj)=> window.I18N[lang] = Object.assign(window.I18N[lang]||{}, obj);
+
+      // ================= FR =================
+      add('fr', {
+        "article_hygiene_title": "Hygiène & entretien — propreté, sécurité & longue tenue",
+        "article_hygiene_body":
+          "<p>Une bonne hygiène, c’est la base d’un maquillage qui tient et d’une peau respectée. Voici des routines simples pour <strong>nettoyer</strong>, <strong>désinfecter</strong> et <strong>stocker</strong> correctement tout ton matériel.</p>" +
+
+          "<h2>1) Pourquoi l’hygiène est essentielle</h2>" +
+          "<ul>" +
+            "<li><strong>Peau</strong> : limite irritations, boutons et sensibilités.</li>" +
+            "<li><strong>Yeux</strong> : réduit le risque de conjonctivite et de bavures.</li>" +
+            "<li><strong>Tenue</strong> : des outils propres déposent mieux les textures → résultat plus net, qui dure.</li>" +
+          "</ul>" +
+
+          "<h2>2) Fréquences de nettoyage</h2>" +
+          "<ul>" +
+            "<li><strong>Pinceaux teint</strong> : lavage profond <em>1×/semaine</em> + nettoyage rapide après produits gras.</li>" +
+            "<li><strong>Pinceaux yeux</strong> : nettoyage rapide à chaque changement de couleur, lavage profond <em>1×/semaine</em>.</li>" +
+            "<li><strong>Éponges</strong> : rincer après chaque usage; <em>remplacer tous les 2–3 mois</em>.</li>" +
+            "<li><strong>Houppettes/velours</strong> : laver <em>1×/semaine</em> (ou alterner 2 pièces).</li>" +
+            "<li><strong>Recourbe-cils</strong> : nettoyer la gomme <em>chaque semaine</em>, changer la pad au besoin.</li>" +
+          "</ul>" +
+
+          "<h2>3) Nettoyage — rapide vs profond</h2>" +
+          "<ul>" +
+            "<li><strong>Rapide (quotidien)</strong> : spray nettoyant pinceaux → essuyer sur chiffon sec; parfait pour yeux et produits gras.</li>" +
+            "<li><strong>Profond (hebdo)</strong> : eau tiède + savon doux/shampoing pinceaux. Mouiller <em>les fibres</em> (pas la virole), masser, rincer clair, <em>reformer</em>, sécher tête en bas ou à plat incliné. Pas d’eau chaude ni sèche-cheveux.</li>" +
+          "</ul>" +
+
+          "<h2>4) Désinfection & sécurité</h2>" +
+          "<ul>" +
+            "<li><strong>70% alcool</strong> : brume légère sur <em>pinceaux synthétiques</em> et outils métalliques (pinces, spatules). Éviter l’excès sur poils naturels.</li>" +
+            "<li><strong>Produits en pot</strong> : prélever à la <em>spatule</em> sur palette → pas de double-dip.</li>" +
+            "<li><strong>Mascara/Gloss</strong> : <em>brosses jetables</em> si usage partagé.</li>" +
+          "</ul>" +
+
+          "<h2>5) PAO (durée après ouverture) & renouvellement</h2>" +
+          "<ul>" +
+            "<li><strong>Mascara</strong> : 3–6 mois.</li>" +
+            "<li><strong>Eye-liner liquide</strong> : ~6 mois.</li>" +
+            "<li><strong>Fond de teint/anti-cernes</strong> : 6–12 mois (selon formule).</li>" +
+            "<li><strong>Poudres</strong> : 12–24 mois (garder au sec).</li>" +
+            "<li><strong>Rouges à lèvres/Gloss</strong> : 12–24 mois (remplacer si odeur/texture anormale).</li>" +
+          "</ul>" +
+
+          "<h2>6) Stockage & transport</h2>" +
+          "<ul>" +
+            "<li>Garde le matériel <strong>au sec</strong>, à l’abri de la chaleur et du soleil (éviter la salle de bain humide).</li>" +
+            "<li>Fermer les capuchons immédiatement; essuyer les cols des flacons (hygiène + étanchéité).</li>" +
+            "<li>En déplacement : trousse zippée + <em>nettoyant solide</em> pour pinceaux + mini flacon spray alcool 70% pour outils.</li>" +
+          "</ul>" +
+
+          "<h2>7) Croisements & peau sensible</h2>" +
+          "<ul>" +
+            "<li>Évite de passer d’une zone à imperfections à une zone saine avec le même outil sans le nettoyer.</li>" +
+            "<li>Peaux réactives : privilégie <strong>synthétique</strong> (moins poreux) et nettoyants doux sans parfum.</li>" +
+            "<li>Test cutané (patch) si tu introduis un nouvel actif/produit.</li>" +
+          "</ul>" +
+
+          "<h2>8) Erreurs courantes → Solutions</h2>" +
+          "<ul>" +
+            "<li><strong>Pinceaux qui sentent</strong> → rincer plus longtemps; finir par un dernier bain d’eau + vinaigre blanc <em>très</em> dilué, puis rinçage clair.</li>" +
+            "<li><strong>Éponges qui tachent</strong> → savon solide + pressions répétées; si odeur persiste → remplacer.</li>" +
+            "<li><strong>Maladies yeux</strong> → jeter mascara/liner utilisés durant l’infection; désinfecter recourbe-cils.</li>" +
+          "</ul>" +
+
+          "<h2>Checklist minute</h2>" +
+          "<ul>" +
+            "<li>Rapide quotidien pour pinceaux utilisés avec crèmes/liquides.</li>" +
+            "<li>Profond hebdo pour tout le set.</li>" +
+            "<li>Éponges : rincer à chaque fois + remplacer 2–3 mois.</li>" +
+            "<li>Spatule & palette pour produits en pot; brosses jetables mascara.</li>" +
+          "</ul>" +
+
+          "<p class='badge'>Voir aussi : <a href='article-pinceaux.html'>Pinceaux : set & entretien</a> • <a href='faq.html'>FAQ</a> • <a href='cours.html'>Tous les cours</a></p>"
+      });
+
+      // ================= EN =================
+      add('en', {
+        "article_hygiene_title": "Hygiene & care — cleanliness, safety & long wear",
+        "article_hygiene_body":
+          "<p>Clean tools = better skin and longer-lasting makeup. Use these simple routines to <strong>clean</strong>, <strong>sanitise</strong> and <strong>store</strong> your kit properly.</p>" +
+
+          "<h2>1) Why hygiene matters</h2>" +
+          "<ul>" +
+            "<li><strong>Skin</strong>: fewer breakouts and irritation.</li>" +
+            "<li><strong>Eyes</strong>: lower risk of conjunctivitis and smudging.</li>" +
+            "<li><strong>Wear</strong>: clean tools deposit product evenly → longer, cleaner finish.</li>" +
+          "</ul>" +
+
+          "<h2>2) Cleaning frequency</h2>" +
+          "<ul>" +
+            "<li><strong>Face brushes</strong>: deep wash <em>weekly</em> + quick clean after creamy/oily products.</li>" +
+            "<li><strong>Eye brushes</strong>: quick clean between colours, deep wash <em>weekly</em>.</li>" +
+            "<li><strong>Sponges</strong>: rinse after each use; <em>replace every 2–3 months</em>.</li>" +
+            "<li><strong>Puffs/puffs</strong>: wash <em>weekly</em> (rotate two pieces).</li>" +
+            "<li><strong>Lash curler</strong>: wipe the pad weekly; replace pad as needed.</li>" +
+          "</ul>" +
+
+          "<h2>3) Quick vs deep cleaning</h2>" +
+          "<ul>" +
+            "<li><strong>Quick (daily)</strong>: brush cleaner spray → wipe on cloth; perfect for eyes and greasy textures.</li>" +
+            "<li><strong>Deep (weekly)</strong>: lukewarm water + gentle soap/brush shampoo. Wet <em>bristles only</em>, avoid ferrule, massage, rinse clear, <em>reshape</em>, dry head-down or flat at an angle. No hot air.</li>" +
+          "</ul>" +
+
+          "<h2>4) Sanitising & safety</h2>" +
+          "<ul>" +
+            "<li><strong>70% alcohol</strong>: light mist on <em>synthetic</em> brushes and metal tools. Go easy on natural hair.</li>" +
+            "<li><strong>Pots</strong>: scrape with a <em>spatula</em> onto palette → no double dipping.</li>" +
+            "<li><strong>Mascara/Gloss</strong>: use <em>disposable wands</em> if sharing.</li>" +
+          "</ul>" +
+
+          "<h2>5) PAO & renewals</h2>" +
+          "<ul>" +
+            "<li><strong>Mascara</strong>: 3–6 months.</li>" +
+            "<li><strong>Liquid liner</strong>: ~6 months.</li>" +
+            "<li><strong>Foundation/concealer</strong>: 6–12 months.</li>" +
+            "<li><strong>Powders</strong>: 12–24 months.</li>" +
+            "<li><strong>Lipsticks/Gloss</strong>: 12–24 months (discard if smell/texture changes).</li>" +
+          "</ul>" +
+
+          "<h2>6) Storage & travel</h2>" +
+          "<ul>" +
+            "<li>Keep kit <strong>dry</strong>, away from heat/sun (avoid humid bathrooms).</li>" +
+            "<li>Close caps immediately; wipe bottle necks.</li>" +
+            "<li>On the go: zipped case + <em>solid brush soap</em> + mini 70% alcohol spray for tools.</li>" +
+          "</ul>" +
+
+          "<h2>7) Cross-contamination & sensitivity</h2>" +
+          "<ul>" +
+            "<li>Avoid moving from breakout areas to clear skin with the same tool.</li>" +
+            "<li>Sensitive skin: prefer <strong>synthetic</strong> fibers and fragrance-free gentle cleaners.</li>" +
+            "<li>Patch test for new actives/products.</li>" +
+          "</ul>" +
+
+          "<h2>8) Common mistakes → Fixes</h2>" +
+          "<ul>" +
+            "<li><strong>Smelly brushes</strong> → longer rinse; finish with a very diluted white-vinegar bath, then clear rinse.</li>" +
+            "<li><strong>Stained sponges</strong> → solid soap + repeated pressing; persistent odour → replace.</li>" +
+            "<li><strong>Eye infections</strong> → discard mascara/liner used during infection; sanitise lash curler.</li>" +
+          "</ul>" +
+
+          "<h2>One-minute checklist</h2>" +
+          "<ul>" +
+            "<li>Daily quick clean for creamy/liquid products.</li>" +
+            "<li>Weekly deep wash for the whole set.</li>" +
+            "<li>Sponges: clean every use + replace 2–3 months.</li>" +
+            "<li>Spatula & palette for pots; disposable mascara wands.</li>" +
+          "</ul>" +
+
+          "<p class='badge'>See also: <a href='article-pinceaux.html'>Brushes: kit & care</a> • <a href='faq.html'>FAQ</a> • <a href='cours.html'>All courses</a></p>"
+      });
+
+      // ================= AR =================
+      add('ar', {
+        "article_hygiene_title": "النظافة والعناية — نظافة وأمان وثبات أطول",
+        "article_hygiene_body":
+          "<p>الأدوات النظيفة تعني بشرة أهدأ ومكياجاً يدوم. اتّبعي هذه الروتينات البسيطة لـ<strong>التنظيف</strong> و<strong>التعقيم</strong> و<strong>التخزين</strong> الصحيح.</p>" +
+
+          "<h2>1) لماذا النظافة مهمة</h2>" +
+          "<ul>" +
+            "<li><strong>البشرة</strong>: تهيّج وحبوب أقل.</li>" +
+            "<li><strong>العينان</strong>: تقليل خطر الالتهاب واللطخات.</li>" +
+            "<li><strong>الثبات</strong>: أدوات نظيفة توزّع المنتج بشكل متساوٍ.</li>" +
+          "</ul>" +
+
+          "<h2>2) تكرار التنظيف</h2>" +
+          "<ul>" +
+            "<li><strong>فرش الوجه</strong>: غسل عميق <em>أسبوعي</em> + تنظيف سريع بعد المنتجات الدسمة.</li>" +
+            "<li><strong>فرش العين</strong>: تنظيف سريع بين الألوان، غسل عميق <em>أسبوعي</em>.</li>" +
+            "<li><strong>الإسفنجات</strong>: شطف بعد كل استخدام؛ <em>استبدال كل 2–3 أشهر</em>.</li>" +
+            "<li><strong>الباف/الفيلفيت</strong>: غسل <em>أسبوعياً</em> (أو التبديل بين قطعتين).</li>" +
+            "<li><strong>مجعّد الرموش</strong>: مسح الوسادة أسبوعياً؛ واستبدالها عند الحاجة.</li>" +
+          "</ul>" +
+
+          "<h2>3) تنظيف سريع مقابل عميق</h2>" +
+          "<ul>" +
+            "<li><strong>سريع (يومي)</strong>: بخاخ تنظيف الفرش + مسح على قماش.</li>" +
+            "<li><strong>عميق (أسبوعي)</strong>: ماء فاتر + صابون لطيف/شامبو فرش. تبليل <em>الشعيرات فقط</em>، تجنّب المعدن، تدليك، شطف واضح، <em>إعادة تشكيل</em>، تجفيف رأساً لأسفل أو مسطحاً بزاوية. بدون هواء ساخن.</li>" +
+          "</ul>" +
+
+          "<h2>4) التعقيم والأمان</h2>" +
+          "<ul>" +
+            "<li><strong>كحول 70%</strong>: رذاذ خفيف على <em>الفرش الاصطناعية</em> والأدوات المعدنية. التخفيف على الشعر الطبيعي.</li>" +
+            "<li><strong>العبوات</strong>: استخدمي <em>ملعقة</em> وسطي المنتج على لوحة — لا غمس متكرر.</li>" +
+            "<li><strong>الماسكارا/الجلوس</strong>: استخدمي <em>فرشاً أحادية الاستخدام</em> عند المشاركة.</li>" +
+          "</ul>" +
+
+          "<h2>5) مدة الصلاحية بعد الفتح (PAO)</h2>" +
+          "<ul>" +
+            "<li><strong>ماسكارا</strong>: 3–6 أشهر.</li>" +
+            "<li><strong>آيلاينر سائل</strong>: ~6 أشهر.</li>" +
+            "<li><strong>فاونديشن/كونسيلر</strong>: 6–12 شهراً.</li>" +
+            "<li><strong>البودرات</strong>: 12–24 شهراً.</li>" +
+            "<li><strong>أحمر الشفاه/الجلوس</strong>: 12–24 شهراً (التخلّص عند تغيّر الرائحة/القوام).</li>" +
+          "</ul>" +
+
+          "<h2>6) التخزين والتنقّل</h2>" +
+          "<ul>" +
+            "<li>احفظي الأدوات <strong>جافّة</strong> وبعيدة عن الحرارة/الشمس (تجنّبي الحمّام الرطب).</li>" +
+            "<li>أغلقي الأغطية فوراً؛ امسحي حواف العبوات.</li>" +
+            "<li>للسفر: حقيبة بسحاب + <em>صابون صلب للفرش</em> + بخاخ كحول صغير 70% للأدوات.</li>" +
+          "</ul>" +
+
+          "<h2>7) انتقال التلوث والبشرة الحساسة</h2>" +
+          "<ul>" +
+            "<li>تجنّبي الانتقال من مناطق الحبوب إلى الجلد السليم بالأداة نفسها.</li>" +
+            "<li>للحساسة: فضّلي الألياف <strong>الاصطناعية</strong> والمنظفات اللطيفة بلا عطر.</li>" +
+            "<li>جرّبي المنتج على جزء صغير قبل التعميم.</li>" +
+          "</ul>" +
+
+          "<h2>8) أخطاء شائعة → حلول</h2>" +
+          "<ul>" +
+            "<li><strong>رائحة الفرش</strong> → شطف أطول؛ إنهاء بحمام خل أبيض مخفّف جداً، ثم شطف واضح.</li>" +
+            "<li><strong>بقع الإسفنج</strong> → صابون صلب + ضغط متكرّر؛ إن استمرّت الرائحة → استبدال.</li>" +
+            "<li><strong>التهابات العين</strong> → التخلّص من ماسكارا/آيلاينر استُخدما أثناء العدوى؛ تعقيم مجعّد الرموش.</li>" +
+          "</ul>" +
+
+          "<h2>قائمة سريعة</h2>" +
+          "<ul>" +
+            "<li>تنظيف سريع يومي للمنتجات الكريمية/السائلة.</li>" +
+            "<li>غسل عميق أسبوعي للمجموعة كاملة.</li>" +
+            "<li>الإسفنج: تنظيف بعد كل استعمال + استبدال كل 2–3 أشهر.</li>" +
+            "<li>ملعقة ولوحة للعبوات؛ فرش ماسكارا أحادية الاستخدام.</li>" +
+          "</ul>" +
+
+          "<p class='badge'>شاهدي أيضاً: <a href='article-pinceaux.html'>الفرش: الطقم والعناية</a> • <a href='faq.html'>الأسئلة الشائعة</a> • <a href='cours.html'>كل الدورات</a></p>"
+      });
+    })();
+</script>
+
+</html>
