@@ -37,12 +37,53 @@
       </div>
     </div>
   </nav>
-  <main class="container">
+ <main class="container">
 
-  <h1 data-i18n="about_title">À propos</h1>
-  <p data-i18n="about_text">...</p>
+  <article class="card">
+    <h1 data-i18n="about_title">À propos de BeautyLab</h1>
+    <div data-i18n-html="about_intro_html">
+      <p>BeautyLab…</p>
+    </div>
+  </article>
 
-  </main>
+  <section class="grid grid-2" style="margin-top:16px">
+    <article class="card">
+      <h2 data-i18n="about_pedago_title">Notre pédagogie</h2>
+      <div data-i18n-html="about_pedago_html"></div>
+    </article>
+
+    <article class="card">
+      <h2 data-i18n="about_for_title">Pour qui ?</h2>
+      <div data-i18n-html="about_for_html"></div>
+    </article>
+  </section>
+
+  <section class="grid grid-2" style="margin-top:16px">
+    <article class="card">
+      <h2 data-i18n="about_outcomes_title">Ce que vous saurez faire</h2>
+      <div data-i18n-html="about_outcomes_html"></div>
+    </article>
+
+    <article class="card">
+      <h2 data-i18n="about_team_title">L’équipe</h2>
+      <div data-i18n-html="about_team_html"></div>
+    </article>
+  </section>
+
+  <section class="grid grid-2" style="margin-top:16px">
+    <article class="card">
+      <h2 data-i18n="about_quality_title">Qualité & éthique</h2>
+      <div data-i18n-html="about_quality_html"></div>
+    </article>
+
+    <article class="card">
+      <h2 data-i18n="about_links_title">Ressources & liens</h2>
+      <div data-i18n-html="about_links_html"></div>
+    </article>
+  </section>
+
+</main>
+
   <footer>
     <div class="container">
       <div class="cols">
@@ -72,4 +113,193 @@
     <button id="acceptCookies" class="btn primary">OK</button>
   </div>
 </body>
+<script>
+// i18n-augment-about.js — ajoute le contenu À propos (FR/EN/AR) sans écraser ton dictionnaire
+(function(){
+  window.I18N = window.I18N || {};
+  const add = (lang, obj)=> window.I18N[lang] = Object.assign(window.I18N[lang]||{}, obj);
+
+  // FR
+  add('fr', {
+    "about_title": "À propos de BeautyLab",
+    "about_intro_html":
+      "<p><strong>BeautyLab</strong> est une plateforme de formation dédiée au maquillage utile et réaliste : looks portables, méthodes claires et résultats reproductibles, pour le quotidien, la photo ou l’évènementiel.</p>" +
+      "<p>Notre promesse : <em>moins d’approximation, plus de maîtrise</em>. Chaque cours combine théorie simple, démonstrations courtes, checklists imprimables et exercices guidés. Tout le contenu est <strong>multilingue</strong> (FR/EN/AR) et <strong>accessible</strong> (structure claire, contraste, navigation clavier).</p>",
+
+    "about_pedago_title": "Notre pédagogie",
+    "about_pedago_html":
+      "<ul>" +
+        "<li><strong>1) Préparer</strong> : hygiène, types de peau, sous-tons, matériel minimal.</li>" +
+        "<li><strong>2) Démontrer</strong> : étapes courtes, caméras proches, schémas de placement.</li>" +
+        "<li><strong>3) Pratiquer</strong> : mini-exercices (liner, fondu, correction) avec <em>timers</em> conseillés.</li>" +
+        "<li><strong>4) Évaluer</strong> : grilles simples pour vérifier symétrie, texture, tenue.</li>" +
+        "<li><strong>5) Accompagner</strong> : FAQ vivante, glossaire, mises à jour saisonnières.</li>" +
+      "</ul>",
+
+    "about_for_title": "Pour qui ?",
+    "about_for_html":
+      "<ul>" +
+        "<li><strong>Débutants</strong> : bases solides (teint, liner, blush) sans jargon.</li>" +
+        "<li><strong>Autodidactes</strong> : corriger les habitudes qui plombent le rendu (oxydation, placards, bavures).</li>" +
+        "<li><strong>Avancé/Pro</strong> : mariée, peaux foncées & métissées, kit durable, hygiène stricte.</li>" +
+      "</ul>",
+
+    "about_outcomes_title": "Ce que vous saurez faire",
+    "about_outcomes_html":
+      "<ul>" +
+        "<li>Identifier votre <strong>sous-ton</strong> et <strong>matcher</strong> un fond de teint sans grisaille.</li>" +
+        "<li>Tracer un <strong>eyeliner net</strong> et symétrique (yeux ronds, tombants, hooded).</li>" +
+        "<li>Obtenir un <strong>teint photo/vidéo</strong> longue tenue (couches fines, fixation par zones).</li>" +
+        "<li>Appliquer une <strong>hygiène pro</strong> (pinceaux, éponges, désinfection légère).</li>" +
+        "<li>Planifier des <strong>routines</strong> par saison et type de peau.</li>" +
+      "</ul>",
+
+    "about_team_title": "L’équipe",
+    "about_team_html":
+      "<p>Le contenu est co-construit avec des <strong>maquilleuses formatrices</strong> et des <strong>MUA invités</strong> (mariée, éditorial, peaux foncées). Aucune recommandation sponsorisée : pédagogie d’abord.</p>",
+
+    "about_quality_title": "Qualité & éthique",
+    "about_quality_html":
+      "<ul>" +
+        "<li><strong>Accessibilité</strong> : navigation clavier, libellés explicites, alternatives texte.</li>" +
+        "<li><strong>Multilingue</strong> : FR/EN/AR avec contenus équivalents.</li>" +
+        "<li><strong>Données</strong> : minimisation, pas de revente. Voir la <a href='politique-confidentialite.html'>Politique de confidentialité</a>.</li>" +
+      "</ul>",
+
+    "about_links_title": "Ressources & liens",
+    "about_links_html":
+      "<ul>" +
+        "<li><a href='cours.html'>Catalogue des cours</a></li>" +
+        "<li><a href='article-teint.html'>Guide Teint (base → fixateur)</a></li>" +
+        "<li><a href='article-eyeliner.html'>Eyeliner : techniques & corrections</a></li>" +
+        "<li><a href='article-pinceaux.html'>Pinceaux : set & entretien</a></li>" +
+        "<li><a href='article-mariee.html'>Mariée : tenue extrême</a></li>" +
+        "<li><a href='article-peaux-foncees.html'>Peaux foncées & métissées</a></li>" +
+        "<li><a href='faq.html' data-i18n='nav_faq'>FAQ</a> — <a href='glossaire.html' data-i18n='nav_gloss'>Glossaire</a> — <a href='contact.html' data-i18n='nav_contact'>Contact</a></li>" +
+      "</ul>"
+  });
+
+  // EN
+  add('en', {
+    "about_title": "About BeautyLab",
+    "about_intro_html":
+      "<p><strong>BeautyLab</strong> is a training platform for practical makeup: wearable looks, clear methods and reproducible results for daily wear, photo or events.</p>" +
+      "<p>Our promise: <em>less guesswork, more mastery</em>. Each course blends simple theory, short demos, printable checklists and guided drills. Content is fully <strong>multilingual</strong> (FR/EN/AR) and <strong>accessible</strong>.</p>",
+
+    "about_pedago_title": "Our pedagogy",
+    "about_pedago_html":
+      "<ul>" +
+        "<li><strong>1) Prepare</strong>: hygiene, skin types, undertones, minimal kit.</li>" +
+        "<li><strong>2) Demonstrate</strong>: short steps, close cams, placement diagrams.</li>" +
+        "<li><strong>3) Practice</strong>: micro-drills (liner, blending, correction) with suggested timers.</li>" +
+        "<li><strong>4) Evaluate</strong>: simple grids for symmetry, texture, longevity.</li>" +
+        "<li><strong>5) Support</strong>: living FAQ, glossary, seasonal updates.</li>" +
+      "</ul>",
+
+    "about_for_title": "Who it’s for",
+    "about_for_html":
+      "<ul>" +
+        "<li><strong>Beginners</strong>: solid fundamentals without jargon.</li>" +
+        "<li><strong>Self-taught</strong>: fix habits that hurt results (oxidation, caking, smudges).</li>" +
+        "<li><strong>Advanced/Pro</strong>: bridal, deep & rich skin tones, durable kit, strict hygiene.</li>" +
+      "</ul>",
+
+    "about_outcomes_title": "Outcomes",
+    "about_outcomes_html":
+      "<ul>" +
+        "<li>Identify your <strong>undertone</strong> and match foundation without greyness.</li>" +
+        "<li>Draw a <strong>crisp, symmetric eyeliner</strong> (round, hooded, downturned).</li>" +
+        "<li>Create a <strong>photo/video-ready base</strong> with zone-based setting.</li>" +
+        "<li>Apply <strong>pro hygiene</strong> with brushes/sponges and light disinfection.</li>" +
+        "<li>Plan <strong>seasonal routines</strong> by skin type.</li>" +
+      "</ul>",
+
+    "about_team_title": "The team",
+    "about_team_html":
+      "<p>Built with <strong>trainer MUAs</strong> and <strong>guest artists</strong> (bridal, editorial, deep tones). No paid placements; pedagogy first.</p>",
+
+    "about_quality_title": "Quality & ethics",
+    "about_quality_html":
+      "<ul>" +
+        "<li><strong>Accessibility</strong>: keyboard navigation, clear labels, text alternatives.</li>" +
+        "<li><strong>Multilingual</strong>: FR/EN/AR with equivalent content.</li>" +
+        "<li><strong>Data</strong>: minimization, no resale. Read our <a href='politique-confidentialite.html'>Privacy Policy</a>.</li>" +
+      "</ul>",
+
+    "about_links_title": "Resources & links",
+    "about_links_html":
+      "<ul>" +
+        "<li><a href='cours.html'>Course catalog</a></li>" +
+        "<li><a href='article-teint.html'>Base routine (primer → setting)</a></li>" +
+        "<li><a href='article-eyeliner.html'>Eyeliner: techniques & fixes</a></li>" +
+        "<li><a href='article-pinceaux.html'>Brushes: set & care</a></li>" +
+        "<li><a href='article-mariee.html'>Bridal: extreme longevity</a></li>" +
+        "<li><a href='article-peaux-foncees.html'>Deep & rich skin tones</a></li>" +
+        "<li><a href='faq.html' data-i18n='nav_faq'>FAQ</a> — <a href='glossaire.html' data-i18n='nav_gloss'>Glossary</a> — <a href='contact.html' data-i18n='nav_contact'>Contact</a></li>" +
+      "</ul>"
+  });
+
+  // AR
+  add('ar', {
+    "about_title": "من نحن — BeautyLab",
+    "about_intro_html":
+      "<p><strong>بيوتي لاب</strong> منصة تدريب تركّز على مكياج عملي وسهل التطبيق: إطلالات واقعية وطرق واضحة ونتيجة قابلة للتكرار للاستخدام اليومي أو للصور والمناسبات.</p>" +
+      "<p>وعدنا: <em>تعليم واضح وإتقان أعلى</em>. كل دورة تجمع نظرية مبسطة وعروضاً قصيرة وقوائم أدوات قابلة للطباعة وتمارين موجهة. المحتوى <strong>متعدد اللغات</strong> (العربية/الفرنسية/الإنجليزية) ومراعي <strong>للوصول</strong>.</p>",
+
+    "about_pedago_title": "منهجيتنا",
+    "about_pedago_html":
+      "<ul>" +
+        "<li><strong>1) التحضير</strong>: نظافة، أنواع البشرة، تحت-اللون، عدة أساسية.</li>" +
+        "<li><strong>2) العرض</strong>: خطوات قصيرة، لقطات قريبة، مخططات تموضع.</li>" +
+        "<li><strong>3) الممارسة</strong>: تمارين صغيرة (آيلاينر، دمج، تصحيح) مع أوقات مقترحة.</li>" +
+        "<li><strong>4) التقييم</strong>: جداول بسيطة للتناظر والملمس والثبات.</li>" +
+        "<li><strong>5) الدعم</strong>: أسئلة شائعة حيّة ومعجم وتحديثات موسمية.</li>" +
+      "</ul>",
+
+    "about_for_title": "لمن هذا؟",
+    "about_for_html":
+      "<ul>" +
+        "<li><strong>مبتدئون</strong>: أساسيات قوية بلا مصطلحات معقدة.</li>" +
+        "<li><strong>تعلّم ذاتي</strong>: تصحيح العادات التي تفسد النتيجة (أكسدة، تكتّل، لطخات).</li>" +
+        "<li><strong>متقدم/محترف</strong>: عروس، درجات داكنة وغنية، حقيبة متينة، نظافة صارمة.</li>" +
+      "</ul>",
+
+    "about_outcomes_title": "المخرجات المتوقعة",
+    "about_outcomes_html":
+      "<ul>" +
+        "<li>تحديد <strong>تحت-اللون</strong> ومطابقة الفاونديشن دون رمادية.</li>" +
+        "<li>رسم <strong>آيلاينر دقيق متناظر</strong> لمختلف أشكال العيون.</li>" +
+        "<li>قاعدة <strong>جاهزة للصور/الفيديو</strong> مع تثبيت حسب المناطق.</li>" +
+        "<li>تطبيق <strong>نظافة احترافية</strong> للفرش والإسفنج مع تعقيم خفيف.</li>" +
+        "<li>تخطيط <strong>روتينات موسمية</strong> وفق نوع البشرة.</li>" +
+      "</ul>",
+
+    "about_team_title": "الفريق",
+    "about_team_html":
+      "<p>المحتوى يُبنى مع <strong>مدرّبات مكياج</strong> و<strong>ضيفات متخصصات</strong> (عروس، تحريري، درجات داكنة). لا توصيات مدفوعة؛ التعليم أولاً.</p>",
+
+    "about_quality_title": "الجودة والأخلاقيات",
+    "about_quality_html":
+      "<ul>" +
+        "<li><strong>إتاحة الوصول</strong>: تنقّل عبر لوحة المفاتيح، عناوين واضحة، نص بديل.</li>" +
+        "<li><strong>متعدد اللغات</strong>: محتوى مكافئ بالعربية والفرنسية والإنجليزية.</li>" +
+        "<li><strong>البيانات</strong>: تقليل الجمع بلا بيع. اطلع على <a href='politique-confidentialite.html'>سياسة الخصوصية</a>.</li>" +
+      "</ul>",
+
+    "about_links_title": "روابط وموارد",
+    "about_links_html":
+      "<ul>" +
+        "<li><a href='cours.html'>الدورات</a></li>" +
+        "<li><a href='article-teint.html'>دليل القاعدة</a></li>" +
+        "<li><a href='article-eyeliner.html'>الآيلاينر: تقنيات وحلول</a></li>" +
+        "<li><a href='article-pinceaux.html'>الفرش: الطقم والعناية</a></li>" +
+        "<li><a href='article-mariee.html'>مكياج العروس: ثبات طويل</a></li>" +
+        "<li><a href='article-peaux-foncees.html'>البشرات الداكنة والمختلطة</a></li>" +
+        "<li><a href='faq.html' data-i18n='nav_faq'>الأسئلة الشائعة</a> — <a href='glossaire.html' data-i18n='nav_gloss'>المعجم</a> — <a href='contact.html' data-i18n='nav_contact'>اتصال</a></li>" +
+      "</ul>"
+  });
+})();
+</script>
+
 </html>
+

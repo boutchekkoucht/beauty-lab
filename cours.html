@@ -39,30 +39,113 @@
   </nav>
   <main class="container">
 
-  <h1 data-i18n="courses_title">Catalogue des cours</h1>
-  <p data-i18n="courses_intro">...</p>
-  <div class="grid grid-2">
+  <!-- Hero / intro -->
+  <section class="card">
+    <h1 data-i18n="courses_title">Catalogue des cours</h1>
+    <p data-i18n="courses_intro">Parcours progressif complet avec théorie, démos, listes d’outils, erreurs fréquentes et plans d’entraînement.</p>
+    <p class="badge"><span data-i18n="updated">Mis à jour</span> : <span id="year"></span></p>
+    <p>
+      <a class="btn primary" href="index.html#start" data-i18n="cta_start">Commencer les cours</a>
+      <a class="btn" href="a-propos.html" data-i18n="cta_about">À propos</a>
+    </p>
+  </section>
+
+  <!-- Navigation des niveaux -->
+  <nav class="card" aria-label="Parcours">
+    <strong>Parcourir :</strong>
+    <a href="#beg" style="margin-left:8px" data-i18n="courses_beg">Base Débutant</a> •
+    <a href="#int" data-i18n="courses_int">Intermédiaire</a> •
+    <a href="#adv" data-i18n="courses_adv">Avancé / Pro</a>
+  </nav>
+
+  <!-- Débutant -->
+  <section id="beg" class="grid grid-2" aria-labelledby="beg-title">
     <div class="card">
-      <h3 data-i18n="courses_beg">Base Débutant</h3>
+      <h3 id="beg-title" data-i18n="courses_beg">Base Débutant</h3>
       <ul id="beg_list"></ul>
+
+      <!-- Liens utiles débutant -->
+      <ul>
+        <li><a href="article-prep.html">Préparation de peau</a></li>
+        <li><a href="article-teint.html">Fond de teint : match & application</a></li>
+        <li><a href="article-hygiene.html">Hygiène & entretien</a></li>
+        <li><a href="article-mascara.html">Mascara : volume & anti-bavures</a></li>
+        <li><a href="glossaire.html" data-i18n="nav_gloss">Glossaire</a></li>
+      </ul>
     </div>
+
     <div class="card">
-      <h3 data-i18n="courses_int">Intermédiaire</h3>
-      <ul id="int_list"></ul>
+      <h3 data-i18n="starter_title">Starter Pack</h3>
+      <p data-i18n="starter_desc">Fond de teint, correcteur, poudre, 2 pinceaux essentiels, éponge, palette neutre, mascara, crayon sourcils.</p>
+      <h4 style="margin-top:10px" data-i18n="hyg_title">Hygiène</h4>
+      <p data-i18n="hyg_desc">Lavez les pinceaux 1×/semaine, changez l’éponge tous les 2–3 mois, démaquillez soigneusement.</p>
     </div>
-  </div>
+  </section>
+
+  <!-- Intermédiaire -->
+  <section id="int" class="grid grid-2" aria-labelledby="int-title">
+    <div class="card">
+      <h3 id="int-title" data-i18n="courses_int">Intermédiaire</h3>
+      <ul id="int_list"></ul>
+
+      <!-- Liens utiles intermédiaire -->
+      <ul>
+        <li><a href="article-smoky.html">Smoky : dégradés propres</a></li>
+        <li><a href="article-eyeliner.html">Eyeliner net & symétrique</a></li>
+        <li><a href="article-contour.html">Contour/Blush : placement naturel</a></li>
+        <li><a href="article-brows.html">Sourcils : mapping & fixation</a></li>
+        <li><a href="article-lips.html">Lèvres longue tenue</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Routines par saison</h3>
+      <p>Adapter textures & soins selon météo (chaleur/humidité vs froid/sec).</p>
+      <p><a class="btn" href="article-prep.html">Voir les routines</a></p>
+    </div>
+  </section>
+
+  <!-- Avancé / Pro -->
+  <section id="adv" class="grid grid-2" aria-labelledby="adv-title">
+    <div class="card">
+      <h3 id="adv-title" data-i18n="courses_adv">Avancé / Pro</h3>
+      <ul id="adv_list"></ul>
+
+      <!-- Liens utiles avancé -->
+      <ul>
+        <li><a href="article-mariee.html">Mariée : tenue extrême</a></li>
+        <li><a href="article-peaux-foncees.html">Peaux foncées & métissées</a></li>
+        <li><a href="article-pinceaux.html">Pinceaux : set & entretien</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Aller plus loin</h3>
+      <p>Gestion cliente, devis, book et workflow de séance. Conseils pratiques & checklists.</p>
+      <p>
+        <a class="btn" href="a-propos.html#pedagogie">Notre pédagogie</a>
+        <a class="btn" href="faq.html" data-i18n="nav_faq">FAQ</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Hook: remplir listes selon la langue -->
   <script>
     window.__afterI18N = function(dict){
-      const beg = dict['courses_beg_list']||[];
-      const ulb = document.getElementById('beg_list'); ulb.innerHTML='';
-      beg.forEach(t=>{ const li=document.createElement('li'); li.innerText=t; ulb.appendChild(li); });
-      const inter = dict['courses_int_list']||[];
-      const uli = document.getElementById('int_list'); uli.innerHTML='';
-      inter.forEach(t=>{ const li=document.createElement('li'); li.innerText=t; uli.appendChild(li); });
-    }
+      const fill = (id, arr=[])=>{
+        const ul = document.getElementById(id);
+        if(!ul) return;
+        ul.innerHTML = '';
+        arr.forEach(t=>{ const li=document.createElement('li'); li.textContent=t; ul.appendChild(li); });
+      };
+      fill('beg_list', dict['courses_beg_list']);
+      fill('int_list', dict['courses_int_list']);
+      fill('adv_list', dict['courses_adv_list']); // NEW: on gère aussi l’avancé
+    };
   </script>
 
-  </main>
+</main>
+
   <footer>
     <div class="container">
       <div class="cols">
